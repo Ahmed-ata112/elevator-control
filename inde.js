@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const childProcess = require('child_process');
 
-outFile = 'test.txt'
+outFile = 'testo.txt'
 const folder = 'out';
 const file = 'test.txt';
 const out = path.join(folder, outFile);
