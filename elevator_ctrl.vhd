@@ -28,22 +28,23 @@ architecture rtl of elevator_ctrl is
     signal counter     : unsigned(15 downto 0);
 
     -- registers for output
-    signal mv_up_r   : std_logic;
-    signal mv_down_r : std_logic;
+    signal mv_up_r   : std_logic := ('0');
+    signal mv_down_r : std_logic := ('0');
 
-    signal door_open_r : std_logic;
-    signal floor_r     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
+    signal door_open_r : std_logic                                               := ('0');
+    signal floor_r     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0) := (others => '0');
 
     -- signals before those regs
     signal mv_up_s     : std_logic;
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;
-    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) downto 0);
+    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) downto 0) := (others => '0');
 
     component one_sec_timer
         port(
             fast_Clk     : in  std_logic;
             reset        : in  std_logic;
+            roll_out     : out std_logic;
             slow_counter : out unsigned(15 downto 0)
         );
     end component;
@@ -85,7 +86,7 @@ begin
                 -- it should stay here untill a valid  floor is reached
                 -- it won't listen to the resolver until then
 
-                if counter /= 1 then
+                if counter /= to_unsigned(1, 16) then
                     -- we are in a safe place now
                     timer_reset <= '0';
                     next_state  <= not_working_state;
@@ -102,18 +103,23 @@ begin
                 timer_reset <= '0';
 
                 if (req_i = floor_r) then
-                    next_state <= door_open_state;
+                    door_open_s <= '1';
+                    next_state  <= door_open_state;
                 elsif (req_i > floor_r) then
+                    mv_up_s    <= '1';
                     next_state <= go_up_state;
                 elsif (req_i < floor_r) then
+                    mv_down_s  <= '1';
                     next_state <= go_down_state;
+
                 end if;
 
             when go_up_state =>
                 mv_up_s     <= '1';
                 mv_down_s   <= '0';
                 door_open_s <= '0';
-                if (counter = 2) then
+
+                if (counter = to_unsigned(2, 16)) then
                     --advanced a floor
                     floor_s     <= floor_s + 1;
                     -- zerozise the counter
@@ -122,8 +128,8 @@ begin
 
                 if (req_i = floor_r) then
                     timer_reset <= '0';
-
-                    next_state <= door_open_state;
+                    door_open_s <= '1';
+                    next_state  <= door_open_state;
                 end if;
 
             when go_down_state =>
@@ -131,7 +137,7 @@ begin
                 mv_down_s   <= '1';
                 door_open_s <= '0';
 
-                if (counter = 2) then
+                if (counter = to_unsigned(2, 16)) then
                     --advanced a floor
                     floor_s     <= floor_s - 1;
                     -- zerozise the counter
@@ -141,8 +147,8 @@ begin
 
                 if (req_i = floor_r) then
                     timer_reset <= '0';
-
-                    next_state <= door_open_state;
+                    door_open_s <= '1';
+                    next_state  <= door_open_state;
                 end if;
 
             when door_open_state =>
@@ -150,7 +156,9 @@ begin
                 mv_down_s   <= '0';
                 door_open_s <= '1';
                 -- we should stay here as long as the door is open then move to the not working
-                if counter = 2 then
+                if counter = to_unsigned(2, 16) then
+                    door_open_s <= '0';
+
                     timer_reset <= '0';
                     next_state  <= not_working_state;
 
