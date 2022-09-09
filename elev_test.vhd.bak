@@ -1,0 +1,43 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity elev_test is
+    generic(
+        N : integer := 1
+    );
+    port(
+        clk   : in  std_logic;
+        b_in  : in  std_logic_vector(N - 1 downto 0);
+        b_out : out std_logic_vector(N - 1 downto 0)
+    );
+end entity;
+
+architecture rtl of elev_test is
+    signal b_next  : std_logic_vector(N - 1 downto 0);
+    signal b_out_s : std_logic_vector(N - 1 downto 0);
+    signal count   : unsigned(3 downto 0);
+begin
+
+    test : process(clk)
+    begin
+        if (rising_edge(clk)) then
+            b_out_s <= b_next;
+            count   <= count + 1;
+        end if;
+    end process;
+
+    p2 : process(count, b_in, b_out_s)
+    begin                               -- 0 => x
+        -- 1 => 10
+        if (b_in(0) = '1') then
+            b_next(0) <= '1';
+        elsif count = "0101" then
+            b_next(0) <= '0';
+        else
+            b_next(0) <= b_out_s(0);
+        end if;
+
+    end process;                        -- p2
+    b_out <= b_out_s;
+end architecture;
