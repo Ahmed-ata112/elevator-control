@@ -38,7 +38,7 @@ architecture rtl of elevator_ctrl is
     signal mv_up_s     : std_logic;
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;
-    signal floor_s     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
+    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) downto 0);
 
     component one_sec_timer
         port(
@@ -64,16 +64,20 @@ begin
                 mv_up_r     <= mv_up_s;
                 mv_down_r   <= mv_down_s;
                 door_open_r <= door_open_s;
-                floor_r     <= floor_s;
+                floor_r     <= std_logic_vector(floor_s);
             end if;
         end if;
     end process;
 
-    state_transitions_process : process(current_state, counter, floor_r, req_i)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, floor_r, mv_down_r, counter, req_i, floor_s)
     begin
         --default values
-
-        next_state <= current_state;
+        mv_up_s     <= mv_up_r;
+        mv_down_s   <= mv_down_r;
+        door_open_s <= door_open_r;
+        floor_s     <= unsigned(floor_r);
+        timer_reset <= '1';
+        next_state  <= current_state;
 
         case current_state is
 
@@ -83,7 +87,8 @@ begin
 
                 if counter /= 1 then
                     -- we are in a safe place now
-                    next_state <= not_working_state;
+                    timer_reset <= '0';
+                    next_state  <= not_working_state;
                 end if;
 
             when not_working_state =>
@@ -92,6 +97,8 @@ begin
                 mv_up_s     <= '0';
                 mv_down_s   <= '0';
                 door_open_s <= '0';
+
+                --counter remains zero
                 timer_reset <= '0';
 
                 if (req_i = floor_r) then
@@ -103,56 +110,54 @@ begin
                 end if;
 
             when go_up_state =>
-                if (req_i = floor_r) then
-                    next_state <= door_open_state;
-                end if;
-
-            when go_down_state =>
-                if (req_i = floor_r) then
-                    next_state <= door_open_state;
-                end if;
-
-            when door_open_state =>
-                -- we should stay here as long as the door is open then move to the not working
-                if counter = 2 then
-                    next_state <= not_working_state;
-
-                end if;
-        end case;
-
-    end process;                        -- state_transitions_process
-
-    state_output_process : process(door_open_r, current_state, mv_up_r, floor_r, mv_down_r)
-    begin
-        mv_up_s     <= mv_up_r;
-        mv_down_s   <= mv_down_r;
-        door_open_s <= door_open_r;
-        floor_s     <= floor_r;
-        timer_reset <= '1';
-
-        case current_state is
-            when preparing_state =>
-
-            when not_working_state =>
-                -- nothing is working and it just stays there
-
-            when go_up_state =>
                 mv_up_s     <= '1';
                 mv_down_s   <= '0';
                 door_open_s <= '0';
+                if (counter = 2) then
+                    --advanced a floor
+                    floor_s     <= floor_s + 1;
+                    -- zerozise the counter
+                    timer_reset <= '0';
+                end if;
+
+                if (req_i = floor_r) then
+                    timer_reset <= '0';
+
+                    next_state <= door_open_state;
+                end if;
 
             when go_down_state =>
                 mv_up_s     <= '0';
                 mv_down_s   <= '1';
                 door_open_s <= '0';
 
+                if (counter = 2) then
+                    --advanced a floor
+                    floor_s     <= floor_s - 1;
+                    -- zerozise the counter
+                    timer_reset <= '0';
+
+                end if;
+
+                if (req_i = floor_r) then
+                    timer_reset <= '0';
+
+                    next_state <= door_open_state;
+                end if;
+
             when door_open_state =>
                 mv_up_s     <= '0';
                 mv_down_s   <= '0';
                 door_open_s <= '1';
+                -- we should stay here as long as the door is open then move to the not working
+                if counter = 2 then
+                    timer_reset <= '0';
+                    next_state  <= not_working_state;
+
+                end if;
         end case;
 
-    end process;                        -- state_output_process
+    end process;                        -- state_transitions_process
 
     U1 : one_sec_timer
         port map(
