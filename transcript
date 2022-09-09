@@ -149,3 +149,76 @@ run
 run
 run
 # Causality operation skipped due to absence of debug database file
+run
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 3170 ns ###############
+#       Signal: /elevator_ctrl/timer_reset @ sub-iteration 0 at Value Z (elevator_ctrl.vhd:27)
+#       Signal: /elevator_ctrl/floor_s @ sub-iteration 0 at Value unknown (elevator_ctrl.vhd:41)
+#   Active process: /elevator_ctrl/state_transitions_process @ sub-iteration 1
+#     Source: elevator_ctrl.vhd:72
+#       Signal: /elevator_ctrl/timer_reset @ sub-iteration 2 at Value Z (elevator_ctrl.vhd:27)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+force -freeze sim:/elevator_ctrl/req_i 5'h00 0
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 40
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+run
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/elevator_ctrl/req_i 5'h00 0
+run
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+run
+run
+run
+run
+run
+force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
+run
+run
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 1770 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 1770 ns.
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 1770 ns.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
+force -freeze sim:/elevator_ctrl/clk 10 0
+# ** UI-Msg: (vsim-4026) Value "10" does not represent a literal of the enumeration type.
+# ** UI-Msg: (vsim-4011) Invalid force value: 10 0.
+# 
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
+run
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+run
+run
+run
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 640 ns.
