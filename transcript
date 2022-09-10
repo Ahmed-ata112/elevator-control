@@ -12,35 +12,53 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# OpenFile ./elevator_ctrl.vhd
-vsim work.elevator_ctrl
-# vsim work.elevator_ctrl 
-# Start time: 09:17:05 on Sep 10,2022
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# OpenFile ./elevator_ctrl_tb.vhd
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 13:10:41 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): control_unit_tb.vhd(70): (vopt-1272) Length of expected is 5; length of actual is 4.
+# ** Note: control_unit_tb.vhd(78): Vopt Compiler exiting
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
+# Error loading design
+# End time: 13:10:42 on Sep 10,2022, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 13:12:16 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): control_unit_tb.vhd(50): (vopt-1550) Port 'req_i' of component 'work.elevator_ctrl_tb(bench).elevator_ctrl' and port 'req_i' of entity 'work.elevator_ctrl' have different sizes:  ([4,5]).
+#         Region: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Error (suppressible): control_unit_tb.vhd(54): (vopt-1550) Port 'floor' of component 'work.elevator_ctrl_tb(bench).elevator_ctrl' and port 'floor' of entity 'work.elevator_ctrl' have different sizes:  ([4,5]).
+#         Region: /elevator_ctrl_tb/elevator_ctrl_inst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=0.
+# Error loading design
+# End time: 13:12:16 on Sep 10,2022, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 13:13:54 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
-# Loading work.elevator_ctrl(rtl)#1
-do wave.do
+# Loading work.elevator_ctrl_tb(bench)#1
 add wave -position insertpoint  \
-sim:/elevator_ctrl/clk \
-sim:/elevator_ctrl/door_open \
-sim:/elevator_ctrl/floor \
-sim:/elevator_ctrl/mv_down \
-sim:/elevator_ctrl/mv_up \
-sim:/elevator_ctrl/N \
-sim:/elevator_ctrl/req_i \
-sim:/elevator_ctrl/reset_n
-add wave -position end  sim:/elevator_ctrl/current_state
+sim:/elevator_ctrl_tb/clk \
+sim:/elevator_ctrl_tb/clk_period \
+sim:/elevator_ctrl_tb/floor \
+sim:/elevator_ctrl_tb/mv_up \
+sim:/elevator_ctrl_tb/req_i \
+sim:/elevator_ctrl_tb/reset_n
 run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
-run
-add wave -position end  sim:/elevator_ctrl/counter
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
 run
 run
 run
@@ -58,6 +76,23 @@ run
 run
 run
 run
+run -all
+# ** Error: NO
+#    Time: 4020 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
 run
 run
 run
@@ -65,7 +100,6 @@ run
 run
 run
 run
-force -freeze sim:/elevator_ctrl/req_i 5'h04 0
 run
 run
 run
@@ -82,10 +116,107 @@ run
 run
 run
 run
-force req 00
-# ** UI-Msg (suppressible): (vsim-4008) Object 'req' not found.
+run
+run -continue
+run -all
+# ** Error: NO
+#    Time: 4020 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Error: NO
+#    Time: 4020 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# ** Error: NO mov_up = 0
 # 
-force req_i 00
+#    Time: 4020 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Error: NO floor = 0100
+# 
+#    Time: 4020 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 run
 run
 run
@@ -105,18 +236,26 @@ restart
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
-# Loading work.elevator_ctrl(rtl)#1
-do wave.do
-do wave.do
+# Loading work.elevator_ctrl_tb(bench)#1
 run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
 run
 run
 run
-add wave -position end  sim:/elevator_ctrl/counter
+run
+run
+run
+run
+run
+# ** Error: NO floor = 0000
+# 
+#    Time: 820 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+# A time value could not be extracted from the current line
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -125,13 +264,243 @@ restart
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
-# Loading work.elevator_ctrl(rtl)#1
-run -over
-do wave.do
-do wave.do
+# Loading work.elevator_ctrl_tb(bench)#1
 run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+# ** Error: NO floor = 0000
+# 
+#    Time: 410 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+# A time value could not be extracted from the current line
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+vsim -voptargs=+acc work.elevator_ctrl_tb
+# End time: 13:26:46 on Sep 10,2022, Elapsed time: 0:12:52
+# Errors: 0, Warnings: 1
+# vsim -voptargs="+acc" work.elevator_ctrl_tb 
+# Start time: 13:26:46 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "elevator_ctrl(rtl)".
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+add wave -position insertpoint  \
+sim:/elevator_ctrl_tb/clk \
+sim:/elevator_ctrl_tb/door_open \
+sim:/elevator_ctrl_tb/floor \
+sim:/elevator_ctrl_tb/mv_down \
+sim:/elevator_ctrl_tb/mv_up \
+sim:/elevator_ctrl_tb/req_i \
+sim:/elevator_ctrl_tb/reset_n \
+sim:/elevator_ctrl_tb/state_out
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+# ** Error: NO floor = 0000
+# 
+#    Time: 410 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+run
+run
+# A time value could not be extracted from the current line
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "elevator_ctrl(rtl)".
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "elevator_ctrl(rtl)".
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+add wave -position end  sim:/elevator_ctrl_tb/counter_out
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 20 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Error: Assertion violation.
+#    Time: 20 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 510 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Error: Assertion violation.
+#    Time: 510 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 510 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Error: NO Counter = UUUUUUUUUUUUUUUU
+# 
+#    Time: 510 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+# A time value could not be extracted from the current line
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
 run
 run
 run
@@ -150,31 +519,121 @@ restart
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
 # Loading work.elevator_ctrl(rtl)#1
-do wave.do
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
 run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
-run
-run
-run
-run
-run
-run
-run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
 run
 run
 run
 run
 run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 510 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Error: NO Counter = UUUUUUUUUUUUUUUU
+# 
+#    Time: 510 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# A time value could not be extracted from the current line
+add wave -position end  sim:/elevator_ctrl_tb/elevator_ctrl_inst/counter
 run
 run
 run
 run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
 run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# ** Error: NO door_open = 0
+# 
+#    Time: 1010 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+# A time value could not be extracted from the current line
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# ** Error: NO door_open = 0
+# 
+#    Time: 1710 ns  Iteration: 0  Instance: /elevator_ctrl_tb
 run
 run
 # Causality operation skipped due to absence of debug database file
@@ -186,80 +645,19 @@ restart
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
+# Loading work.elevator_ctrl_tb(bench)#1
 # Loading work.elevator_ctrl(rtl)#1
-restart
-do wave.do
-run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-force -freeze sim:/elevator_ctrl/req_i 5'h09 0
-run
-run
-run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading ieee.math_real(body)
-# Loading work.elevator_ctrl(rtl)#1
-dp wave.do
-# invalid command name "dp"
-do wave.do
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/elevator_ctrl_inst/counter" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: control_unit_tb.vhd
 run
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb/elevator_ctrl_inst
 run
 run
 run
@@ -298,20 +696,11 @@ run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+vsim work.elevator_ctrl
+# End time: 14:47:10 on Sep 10,2022, Elapsed time: 1:20:24
+# Errors: 0, Warnings: 4
+# vsim work.elevator_ctrl 
+# Start time: 14:47:10 on Sep 10,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
@@ -323,6 +712,47 @@ do wave.do
 run
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/elevator_ctrl/roll_s
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+run -over
+do wave.do
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+do wave.do
+do wave.do
+add wave -position end  sim:/elevator_ctrl/roll_s
+run
 # ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
 #    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
 run
@@ -348,25 +778,22 @@ run
 run
 run
 run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
 run
 run
 run
-force -freeze sim:/elevator_ctrl/req_i 5'h00 0
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl(rtl)#1
+do wa
+# Cannot open macro file: wa
+do wave.do
 run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
 run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 20
-run
-run
-run
-run
-run
-# End time: 10:17:38 on Sep 10,2022, Elapsed time: 1:00:33
-# Errors: 0, Warnings: 2

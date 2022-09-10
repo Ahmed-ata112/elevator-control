@@ -9,11 +9,11 @@ entity elevator_ctrl is
     port(
         clk       : in  std_logic;
         reset_n   : in  std_logic;
-        req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
+        req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
         mv_up     : out std_logic;
         mv_down   : out std_logic;
         door_open : out std_logic;
-        floor     : out std_logic_vector(integer(ceil(log2(real(N)))) downto 0)
+        floor     : out std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0)
         -- 4 bits is enough for 10 floors 
     );
 end entity;
@@ -24,10 +24,11 @@ architecture rtl of elevator_ctrl is
     signal next_state    : state_type;
 
     --- timer  signals
-    signal timer_reset  : std_logic;
-    signal roll_s       : std_logic;
-    signal add_or_sub_s : std_logic := ('0');
-    signal counter      : unsigned(15 downto 0);
+    signal timer_reset          : std_logic;
+    signal floor_counter_enable : std_logic;
+    signal roll_s               : std_logic;
+    signal add_or_sub_s         : std_logic            := ('0');
+    signal counter              : unsigned(3 downto 0) := (others => '0');
 
     -- registers for output
     signal mv_up_r   : std_logic := ('0');
@@ -39,14 +40,14 @@ architecture rtl of elevator_ctrl is
     signal mv_up_s     : std_logic;
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;
-    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) downto 0) := (others => '0');
+    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '0');
 
     component one_sec_timer
         port(
             fast_Clk     : in  std_logic;
             reset        : in  std_logic;
-            -- roll_out     : out std_logic;
-            slow_counter : out unsigned(15 downto 0)
+            roll_out     : out std_logic;
+            slow_counter : out unsigned(3 downto 0)
         );
     end component;
     component floor_counter
@@ -83,36 +84,35 @@ begin
         end if;
     end process;
 
-    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, mv_up_s, mv_down_s)
     begin
         --default values
-        mv_up_s      <= mv_up_r;
-        mv_down_s    <= mv_down_r;
-        door_open_s  <= door_open_r;
-        timer_reset  <= '1';
-        next_state   <= current_state;
-        roll_s       <= '0';
-        add_or_sub_s <= '0';
+        mv_up_s              <= mv_up_r;
+        mv_down_s            <= mv_down_r;
+        door_open_s          <= door_open_r;
+        timer_reset          <= '1';
+        next_state           <= current_state;
+        floor_counter_enable <= '0';
+        add_or_sub_s         <= '0';
         case current_state is
 
             when preparing_state =>
                 -- it should stay here untill a valid  floor is reached
                 -- it won't listen to the resolver until then
 
-                if counter = to_unsigned(0, 16) then
+                if counter = to_unsigned(0, 4) then
                     -- we are in a safe place now
                     timer_reset <= '0';
                     next_state  <= not_working_state;
-                elsif counter = to_unsigned(2, 16) then
-                    timer_reset <= '0';
+                elsif roll_s = '1' then
                     if mv_up_s = '1' then
                         --add the floor
-                        roll_s       <= '1';
-                        add_or_sub_s <= '1';
+                        floor_counter_enable <= '1';
+                        add_or_sub_s         <= '1';
                     elsif mv_down_s = '1' then
                         -- decrease the floor
-                        roll_s       <= '1';
-                        add_or_sub_s <= '0';
+                        floor_counter_enable <= '1';
+                        add_or_sub_s         <= '0';
                     end if;
                 end if;
 
@@ -124,7 +124,7 @@ begin
                 door_open_s <= '0';
 
                 --counter remains zero
-                timer_reset <= '0';
+                timer_reset <= '1';
 
                 if (unsigned(req_i) = floor_s) then
                     door_open_s <= '1';
@@ -135,7 +135,9 @@ begin
                 elsif (unsigned(req_i) < floor_s) then
                     mv_down_s  <= '1';
                     next_state <= go_down_state;
-
+                else
+                    -- stop where You are
+                    timer_reset <= '0';
                 end if;
 
             when go_up_state =>
@@ -143,12 +145,10 @@ begin
                 mv_down_s   <= '0';
                 door_open_s <= '0';
 
-                if (counter = to_unsigned(2, 16)) then
+                if (roll_s = '1') then  -- 2 sec passed
                     --advanced a floor
-                    roll_s       <= '1';
-                    add_or_sub_s <= '1';
-                    -- zerozise the counter
-                    timer_reset  <= '0';
+                    floor_counter_enable <= '1';
+                    add_or_sub_s         <= '1';
 
                     if (unsigned(req_i) < floor_s) then
                         mv_up_s    <= '0';
@@ -157,8 +157,9 @@ begin
                     end if;
                 end if;
 
+                -- TODO : it will the resolver duty to ensure that no req changes on the edges 
                 if (unsigned(req_i) = floor_s) then
-                    timer_reset <= '0';
+                    -- timer_reset <= '0';
                     door_open_s <= '1';
                     mv_up_s     <= '0';
                     next_state  <= door_open_state;
@@ -169,12 +170,10 @@ begin
                 mv_down_s   <= '1';
                 door_open_s <= '0';
                 -- at the edge of a time step
-                if (counter = to_unsigned(2, 16)) then
+                if (roll_s = '1') then
                     --advanced a floor
-                    roll_s       <= '1';
-                    add_or_sub_s <= '0';
-                    -- zerozise the counter
-                    timer_reset  <= '0';
+                    floor_counter_enable <= '1';
+                    add_or_sub_s         <= '0';
 
                     if (unsigned(req_i) > floor_s) then
                         mv_up_s    <= '1';
@@ -186,7 +185,6 @@ begin
 
                 if (unsigned(req_i) = floor_s) then
 
-                    timer_reset <= '0';
                     door_open_s <= '1';
                     mv_down_s   <= '0';
 
@@ -198,9 +196,9 @@ begin
                 mv_down_s   <= '0';
                 door_open_s <= '1';
                 -- we should stay here as long as the door is open then move to the not working
-                if counter = to_unsigned(2, 16) then
+                if roll_s = '1' then
                     door_open_s <= '0';
-                    timer_reset <= '0';
+                    -- timer_reset <= '0';
                     next_state  <= not_working_state;
 
                 end if;
@@ -212,19 +210,19 @@ begin
         port map(
             fast_Clk     => clk,
             reset        => timer_reset,
-            -- roll_out     => roll_s,
+            roll_out     => roll_s,
             slow_counter => counter
         );
 
     floor_counter_inst : component floor_counter
         generic map(
-            n => integer(ceil(log2(real(N)))) + 1,
+            n => integer(ceil(log2(real(N)))),
             k => N
         )
         port map(
             clock      => clk,
             reset_n    => '1',          --its always working
-            clk_enable => roll_s,
+            clk_enable => floor_counter_enable,
             add_or_sub => add_or_sub_s,
             Q          => floor_s
         );
