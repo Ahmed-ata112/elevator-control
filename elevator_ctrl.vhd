@@ -24,15 +24,16 @@ architecture rtl of elevator_ctrl is
     signal next_state    : state_type;
 
     --- timer  signals
-    signal timer_reset : std_logic;
-    signal counter     : unsigned(15 downto 0);
+    signal timer_reset  : std_logic;
+    signal roll_s       : std_logic;
+    signal add_or_sub_s : std_logic := ('0');
+    signal counter      : unsigned(15 downto 0);
 
     -- registers for output
     signal mv_up_r   : std_logic := ('0');
     signal mv_down_r : std_logic := ('0');
 
-    signal door_open_r : std_logic                                               := ('0');
-    signal floor_r     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0) := (others => '0');
+    signal door_open_r : std_logic := ('0');
 
     -- signals before those regs
     signal mv_up_s     : std_logic;
@@ -44,8 +45,21 @@ architecture rtl of elevator_ctrl is
         port(
             fast_Clk     : in  std_logic;
             reset        : in  std_logic;
-            roll_out     : out std_logic;
+            -- roll_out     : out std_logic;
             slow_counter : out unsigned(15 downto 0)
+        );
+    end component;
+    component floor_counter
+        generic(
+            n : natural;
+            k : integer
+        );
+        port(
+            clock      : in  std_logic;
+            reset_n    : in  std_logic;
+            clk_enable : in  std_logic;
+            add_or_sub : in  std_logic;
+            Q          : out unsigned(n - 1 downto 0)
         );
     end component;
 
@@ -65,21 +79,19 @@ begin
                 mv_up_r     <= mv_up_s;
                 mv_down_r   <= mv_down_s;
                 door_open_r <= door_open_s;
-                floor_r     <= std_logic_vector(floor_s);
             end if;
         end if;
     end process;
 
-    state_transitions_process : process(door_open_r, current_state, mv_up_r, floor_r, mv_down_r, counter, req_i, floor_s)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, roll_s)
     begin
         --default values
         mv_up_s     <= mv_up_r;
         mv_down_s   <= mv_down_r;
         door_open_s <= door_open_r;
-        floor_s     <= unsigned(floor_r);
         timer_reset <= '1';
         next_state  <= current_state;
-
+        roll_s      <= '0';
         case current_state is
 
             when preparing_state =>
@@ -102,13 +114,13 @@ begin
                 --counter remains zero
                 timer_reset <= '0';
 
-                if (req_i = floor_r) then
+                if (unsigned(req_i) = floor_s) then
                     door_open_s <= '1';
                     next_state  <= door_open_state;
-                elsif (req_i > floor_r) then
+                elsif (unsigned(req_i) > floor_s) then
                     mv_up_s    <= '1';
                     next_state <= go_up_state;
-                elsif (req_i < floor_r) then
+                elsif (unsigned(req_i) < floor_s) then
                     mv_down_s  <= '1';
                     next_state <= go_down_state;
 
@@ -121,12 +133,13 @@ begin
 
                 if (counter = to_unsigned(2, 16)) then
                     --advanced a floor
-                    floor_s     <= floor_s + 1;
+                    roll_s       <= '1';
+                    add_or_sub_s <= '1';
                     -- zerozise the counter
-                    timer_reset <= '0';
+                    timer_reset  <= '0';
                 end if;
-
-                if (req_i = floor_r) then
+                -- TODo: a request with another number  
+                if (unsigned(req_i) = floor_s) then
                     timer_reset <= '0';
                     door_open_s <= '1';
                     next_state  <= door_open_state;
@@ -139,13 +152,15 @@ begin
 
                 if (counter = to_unsigned(2, 16)) then
                     --advanced a floor
-                    floor_s     <= floor_s - 1;
+                    roll_s       <= '1';
+                    add_or_sub_s <= '0';
                     -- zerozise the counter
-                    timer_reset <= '0';
+                    timer_reset  <= '0';
 
                 end if;
 
-                if (req_i = floor_r) then
+                if (unsigned(req_i) = floor_s) then
+
                     timer_reset <= '0';
                     door_open_s <= '1';
                     next_state  <= door_open_state;
@@ -171,12 +186,25 @@ begin
         port map(
             fast_Clk     => clk,
             reset        => timer_reset,
+            -- roll_out     => roll_s,
             slow_counter => counter
+        );
+
+    floor_counter_inst : component floor_counter
+        generic map(
+            n => integer(ceil(log2(real(N)))) + 1,
+            k => N
+        )
+        port map(
+            clock      => clk,
+            reset_n    => reset_n,
+            clk_enable => roll_s,
+            add_or_sub => add_or_sub_s,
+            Q          => floor_s
         );
 
     mv_up     <= mv_up_r;
     mv_down   <= mv_down_r;
     door_open <= door_open_r;
-    floor     <= floor_r;
-
+    floor     <= std_logic_vector(floor_s);
 end architecture;

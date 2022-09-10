@@ -15,8 +15,164 @@
 # OpenFile ./elevator_ctrl.vhd
 vsim work.elevator_ctrl
 # vsim work.elevator_ctrl 
-# Start time: 23:26:15 on Sep 09,2022
+# Start time: 00:41:05 on Sep 10,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl(rtl)#1
+add wave -position insertpoint sim:/elevator_ctrl/*
+add wave -position insertpoint  \
+sim:/elevator_ctrl/clk \
+sim:/elevator_ctrl/door_open \
+sim:/elevator_ctrl/floor \
+sim:/elevator_ctrl/mv_down \
+sim:/elevator_ctrl/mv_up \
+sim:/elevator_ctrl/N \
+sim:/elevator_ctrl/req_i \
+sim:/elevator_ctrl/reset_n
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
+force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
+run
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+run
+run
+run
+run
+#############  Autofindloop Analysis  ###############
+#############  Loop found at time 450 ns ###############
+#       Signal: /elevator_ctrl/timer_reset @ sub-iteration 0 at Value Z (elevator_ctrl.vhd:27)
+#       Signal: /elevator_ctrl/floor_s @ sub-iteration 0 at Value unknown (elevator_ctrl.vhd:42)
+#   Active process: /elevator_ctrl/state_transitions_process @ sub-iteration 1
+#     Source: elevator_ctrl.vhd:74
+#       Signal: /elevator_ctrl/timer_reset @ sub-iteration 2 at Value Z (elevator_ctrl.vhd:27)
+################# END OF LOOP #################
+# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 450 ns.
+vsim work.one_sec_timer
+# End time: 00:44:56 on Sep 10,2022, Elapsed time: 0:03:51
+# Errors: 1, Warnings: 1
+# vsim work.one_sec_timer 
+# Start time: 00:44:56 on Sep 10,2022
 # ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.one_sec_timer(rtl)#1
+add wave -position insertpoint  \
+sim:/one_sec_timer/fast_Clk \
+sim:/one_sec_timer/reset \
+sim:/one_sec_timer/roll_out \
+sim:/one_sec_timer/slow_counter
+force -freeze sim:/one_sec_timer/fast_Clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/one_sec_timer/reset 0 0 -cancel 10
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.one_sec_timer(rtl)#1
+# Warning in wave window restart: (vish-4014) No objects found matching '/one_sec_timer/roll_out'. 
+vsim work.elevator_ctrl
+# End time: 01:49:43 on Sep 10,2022, Elapsed time: 1:04:47
+# Errors: 0, Warnings: 0
+# vsim work.elevator_ctrl 
+# Start time: 01:49:43 on Sep 10,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of component 'work.elevator_ctrl(rtl).floor_counter' have different sizes:  ([5,10]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# ** Error (suppressible): elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of entity 'work.floor_counter' have different sizes:  ([5,10]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 01:49:45 on Sep 10,2022, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 1
+vsim work.elevator_ctrl
+# vsim work.elevator_ctrl 
+# Start time: 01:52:19 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of component 'work.elevator_ctrl(rtl).floor_counter' have different sizes:  ([5,4]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# ** Error (suppressible): elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of entity 'work.floor_counter' have different sizes:  ([5,4]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 01:52:21 on Sep 10,2022, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 1
+vsim work.elevator_ctrl
+# vsim work.elevator_ctrl 
+# Start time: 01:53:27 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of component 'work.elevator_ctrl(rtl).floor_counter' have different sizes:  ([5,4]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl(rtl)#1
+# A time value could not be extracted from the current line
+vsim work.elevator_ctrl
+# End time: 01:54:52 on Sep 10,2022, Elapsed time: 0:01:25
+# Errors: 0, Warnings: 1
+# vsim work.elevator_ctrl 
+# Start time: 01:54:52 on Sep 10,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl(rtl)#1
+quit -sim
+# End time: 01:55:23 on Sep 10,2022, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 0
+vsim work.elevator_ctrl
+# vsim work.elevator_ctrl 
+# Start time: 01:55:28 on Sep 10,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -32,52 +188,77 @@ sim:/elevator_ctrl/mv_up \
 sim:/elevator_ctrl/N \
 sim:/elevator_ctrl/req_i \
 sim:/elevator_ctrl/reset_n
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 50
-force -freeze sim:/elevator_ctrl/clk 1 0, 0 {20 ns} -r 40
-force -freeze sim:/elevator_ctrl/req_i 5'h00 0
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
+force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
 run
 # ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
 #    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
 run
-add wave -position end  sim:/elevator_ctrl/current_state
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
 run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+add wave -position end  sim:/elevator_ctrl/current_state
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
+force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
+run
+# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of component 'work.elevator_ctrl(rtl).floor_counter' have different sizes:  ([5,4]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
 # Loading work.elevator_ctrl(rtl)#1
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 100
-force -freeze sim:/elevator_ctrl/req_i 5'h00 0
+vsim work.elevator_ctrl
+# End time: 02:00:42 on Sep 10,2022, Elapsed time: 0:05:14
+# Errors: 0, Warnings: 1
+# vsim work.elevator_ctrl 
+# Start time: 02:00:42 on Sep 10,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of component 'work.elevator_ctrl(rtl).floor_counter' have different sizes:  ([5,4]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# ** Error (suppressible): elevator_ctrl.vhd(203): (vopt-1549) At instance floor_counter_inst the actual expression and the port 'Q' of entity 'work.floor_counter' have different sizes:  ([5,4]).
+#         Region: /elevator_ctrl/floor_counter_inst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=1.
+# Error loading design
+# End time: 02:00:44 on Sep 10,2022, Elapsed time: 0:00:02
+# Errors: 1, Warnings: 1
+vsim work.elevator_ctrl
+# vsim work.elevator_ctrl 
+# Start time: 02:02:45 on Sep 10,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.elevator_ctrl(rtl)#1
+force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
+force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
+add wave -position insertpoint  \
+sim:/elevator_ctrl/clk \
+sim:/elevator_ctrl/door_open \
+sim:/elevator_ctrl/floor \
+sim:/elevator_ctrl/mv_down \
+sim:/elevator_ctrl/mv_up \
+sim:/elevator_ctrl/N \
+sim:/elevator_ctrl/req_i \
+sim:/elevator_ctrl/reset_n
+add wave -position end  sim:/elevator_ctrl/current_state
 run
 # ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
 #    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-force -freeze sim:/elevator_ctrl/clk 1 0, 0 {20 ns} -r 40
-run
-run
-run
-run
 run
 run
 run
@@ -93,16 +274,6 @@ run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
@@ -112,113 +283,29 @@ restart
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
 # Loading work.elevator_ctrl(rtl)#1
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
-force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
+do wave.do
 run
 # ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
 #    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 force -freeze sim:/elevator_ctrl/req_i 5'h00 0
 run
 run
 run
 run
 run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/req_i 5'h0F 0
-run
-run
-run
-run
-run
-run
-# Causality operation skipped due to absence of debug database file
-run
-run
-#############  Autofindloop Analysis  ###############
-#############  Loop found at time 3170 ns ###############
-#       Signal: /elevator_ctrl/timer_reset @ sub-iteration 0 at Value Z (elevator_ctrl.vhd:27)
-#       Signal: /elevator_ctrl/floor_s @ sub-iteration 0 at Value unknown (elevator_ctrl.vhd:41)
-#   Active process: /elevator_ctrl/state_transitions_process @ sub-iteration 1
-#     Source: elevator_ctrl.vhd:72
-#       Signal: /elevator_ctrl/timer_reset @ sub-iteration 2 at Value Z (elevator_ctrl.vhd:27)
-################# END OF LOOP #################
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 3170 ns.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-force -freeze sim:/elevator_ctrl/req_i 5'h00 0
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 40
-force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
-run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
-force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
-force -freeze sim:/elevator_ctrl/req_i 5'h00 0
-run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-run
-run
-run
-run
-run
-force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
-run
-run
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 1770 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 1770 ns.
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 1770 ns.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-force -freeze sim:/elevator_ctrl/req_i 5'h0f 0
-force -freeze sim:/elevator_ctrl/clk 10 0
-# ** UI-Msg: (vsim-4026) Value "10" does not represent a literal of the enumeration type.
-# ** UI-Msg: (vsim-4011) Invalid force value: 10 0.
-# 
-force -freeze sim:/elevator_ctrl/reset_n 0 0 -cancel 10
-run
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl
-force -freeze sim:/elevator_ctrl/clk 1 0, 0 {5 ns} -r 10
-run
-run
-run
-# ** Error (suppressible): (vsim-3601) Iteration limit 10000000 reached at time 640 ns.
+# End time: 02:07:59 on Sep 10,2022, Elapsed time: 0:05:14
+# Errors: 0, Warnings: 1
