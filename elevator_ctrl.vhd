@@ -152,7 +152,7 @@ begin
 
                     if (unsigned(req_i) < floor_s) then
                         mv_up_s    <= '0';
-                        mv_down_s  <= '1';
+                        mv_down_s  <= '0';
                         next_state <= go_down_state;
                     end if;
                 end if;

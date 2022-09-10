@@ -22,7 +22,7 @@ begin
                 fast_count        <= (others => '0');
                 slow_count_signal <= (others => '0');
 
-            elsif fast_count = 20 then
+            elsif fast_count = 19 then
 
                 fast_count <= (others => '0');
                 if (slow_count_signal = to_unsigned(1, 4)) then
