@@ -12,40 +12,10 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# OpenFile ./resolver_comb.vhd
+# OpenFile ./elevator_ctrl_tb.vhd
 vsim work.resolver_comb
 # vsim work.resolver_comb 
-# Start time: 19:09:35 on Sep 10,2022
-# ** Note: (vsim-3812) Design is being optimized...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading ieee.math_real(body)
-# Loading work.resolver_comb(arch)#1
-add wave -position end  sim:/resolver_comb/ups
-add wave -position end  sim:/resolver_comb/clk
-add wave -position end  sim:/resolver_comb/highest_dest
-force -freeze sim:/resolver_comb/clk 1 0, 0 {20 ns} -r 40
-force -freeze sim:/resolver_comb/clk 1 0, 0 {5 ns} -r 10
-force ups 003
-run
-run
-run
-run
-run
-run
-run
-run
-force ups 013
-run
-
-run
-force ups FFF
-run
-run
-run
-restart
+# Start time: 21:49:36 on Sep 10,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
@@ -53,7 +23,7 @@ restart
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
 # Loading work.resolver_comb(arch)#1
-force -freeze sim:/resolver_comb/clk 1 0, 0 {5 ns} -r 10
+add wave -position end  sim:/resolver_comb/ups
 add wave -position insertpoint  \
 sim:/resolver_comb/buttons \
 sim:/resolver_comb/clk \
@@ -61,22 +31,38 @@ sim:/resolver_comb/downs \
 sim:/resolver_comb/highest_dest \
 sim:/resolver_comb/lowest_dest \
 sim:/resolver_comb/N \
+sim:/resolver_comb/no_button_is_pressed \
 sim:/resolver_comb/none_is_pressed \
 sim:/resolver_comb/ups
-force buttons fff
-force ups fff
-force downss fff
-# ** UI-Msg (suppressible): (vsim-4008) Object 'downss' not found.
-# 
-force downs fff
+force -freeze sim:/resolver_comb/clk 1 0, 0 {5 ns} -r 10
+force buttons 0FF
+force ups 030
+force downs 030
 run
-force downs f8f
+force buttons 0F0
 run
-force downs ff0
+force buttons 0F8
 run
-force ups f8f
+force buttons 0F7
 run
-force ups 011
+force ups 000
 run
-# End time: 19:50:35 on Sep 10,2022, Elapsed time: 0:41:00
-# Errors: 0, Warnings: 0
+force downs 000
+run
+force buttons 000
+run
+force buttons FFF
+run
+run
+run
+run
+force buttons F0F
+run
+run
+run
+force buttons FFF
+run
+force downs 00F
+run
+
+run
