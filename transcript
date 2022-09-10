@@ -878,3 +878,14 @@ run
 run
 run
 run
+force -freeze sim:/elevator_ctrl/req_i 4'h2 0
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 16:17:47 on Sep 10,2022, Elapsed time: 1:30:37
+# Errors: 0, Warnings: 1
