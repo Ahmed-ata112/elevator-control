@@ -22,7 +22,7 @@ entity resolver_fsm is
 end entity resolver_fsm;
 
 architecture rtl of resolver_fsm is
-    type state_type is (none_state, upping_state, downing_state, urgent_in_upping_state, urgent_out_downing_state, reached_state);
+    type state_type is (none_state, upping_state, downing_state, reached_a_floor);
     signal current_state : state_type;
     signal next_state    : state_type;
 
@@ -62,7 +62,7 @@ begin
         end if;
     end process;                        -- clk_p
 
-    state_p : process(clk)
+    state_p : process(door_open, lowest_dest_s, current_state, req, downs, ups, floor, highest_dest_s, none_is_pressed_s, buttons)
     begin
         case current_state is
             when none_state =>
@@ -79,31 +79,23 @@ begin
             when upping_state =>
 
                 req <= std_logic_vector(highest_dest_s);
-                if (buttons(to_integer(unsigned(floor))) = '0' or ups(to_integer(unsigned(floor))) = '0') then
-                    next_state <= urgent_in_upping_state;
-                end if;
-
-            when urgent_in_upping_state =>
-                req <= floor;
-                -- wait untill he opens the dooe then change the req
-                if (door_open = '1') then
-                    next_state <= upping_state;
+                if (buttons(to_integer(unsigned(floor))) = '0' or ups(to_integer(unsigned(floor))) = '0' or req = floor) then
+                    next_state <= reached_a_floor;
                 end if;
 
             when downing_state =>
                 req <= std_logic_vector(lowest_dest_s);
-                if (buttons(to_integer(unsigned(floor))) = '0' or downs(to_integer(unsigned(floor))) = '0') then
-                    next_state <= urgent_out_downing_state;
-                end if;
-            when urgent_out_downing_state =>
-                req <= floor;
-                -- wait untill he opens the dooe then change the req
-                if (door_open = '1') then
-                    next_state <= downing_state;
+                if (buttons(to_integer(unsigned(floor))) = '0' or downs(to_integer(unsigned(floor))) = '0' or req = floor) then
+                    next_state <= reached_a_floor;
                 end if;
 
-            when reached_state =>
-                null;
+            when reached_a_floor =>
+                req <= floor;
+                -- wait untill he opens the door then change the req
+                if (door_open = '1') then
+                    next_state <= none_state;
+                end if;
+
         end case;
     end process;                        -- state_p
 
