@@ -83,25 +83,37 @@ begin
         end if;
     end process;
 
-    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, roll_s)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s)
     begin
         --default values
-        mv_up_s     <= mv_up_r;
-        mv_down_s   <= mv_down_r;
-        door_open_s <= door_open_r;
-        timer_reset <= '1';
-        next_state  <= current_state;
-        roll_s      <= '0';
+        mv_up_s      <= mv_up_r;
+        mv_down_s    <= mv_down_r;
+        door_open_s  <= door_open_r;
+        timer_reset  <= '1';
+        next_state   <= current_state;
+        roll_s       <= '0';
+        add_or_sub_s <= '0';
         case current_state is
 
             when preparing_state =>
                 -- it should stay here untill a valid  floor is reached
                 -- it won't listen to the resolver until then
 
-                if counter /= to_unsigned(1, 16) then
+                if counter = to_unsigned(0, 16) then
                     -- we are in a safe place now
                     timer_reset <= '0';
                     next_state  <= not_working_state;
+                elsif counter = to_unsigned(2, 16) then
+                    timer_reset <= '0';
+                    if mv_up_s = '1' then
+                        --add the floor
+                        roll_s       <= '1';
+                        add_or_sub_s <= '1';
+                    elsif mv_down_s = '1' then
+                        -- decrease the floor
+                        roll_s       <= '1';
+                        add_or_sub_s <= '0';
+                    end if;
                 end if;
 
             when not_working_state =>
@@ -137,11 +149,18 @@ begin
                     add_or_sub_s <= '1';
                     -- zerozise the counter
                     timer_reset  <= '0';
+
+                    if (unsigned(req_i) < floor_s) then
+                        mv_up_s    <= '0';
+                        mv_down_s  <= '1';
+                        next_state <= go_down_state;
+                    end if;
                 end if;
-                -- TODo: a request with another number  
+
                 if (unsigned(req_i) = floor_s) then
                     timer_reset <= '0';
                     door_open_s <= '1';
+                    mv_up_s     <= '0';
                     next_state  <= door_open_state;
                 end if;
 
@@ -149,7 +168,7 @@ begin
                 mv_up_s     <= '0';
                 mv_down_s   <= '1';
                 door_open_s <= '0';
-
+                -- at the edge of a time step
                 if (counter = to_unsigned(2, 16)) then
                     --advanced a floor
                     roll_s       <= '1';
@@ -157,13 +176,21 @@ begin
                     -- zerozise the counter
                     timer_reset  <= '0';
 
+                    if (unsigned(req_i) > floor_s) then
+                        mv_up_s    <= '1';
+                        mv_down_s  <= '0';
+                        next_state <= go_up_state;
+
+                    end if;
                 end if;
 
                 if (unsigned(req_i) = floor_s) then
 
                     timer_reset <= '0';
                     door_open_s <= '1';
-                    next_state  <= door_open_state;
+                    mv_down_s   <= '0';
+
+                    next_state <= door_open_state;
                 end if;
 
             when door_open_state =>
@@ -173,7 +200,6 @@ begin
                 -- we should stay here as long as the door is open then move to the not working
                 if counter = to_unsigned(2, 16) then
                     door_open_s <= '0';
-
                     timer_reset <= '0';
                     next_state  <= not_working_state;
 
@@ -197,7 +223,7 @@ begin
         )
         port map(
             clock      => clk,
-            reset_n    => reset_n,
+            reset_n    => '1',          --its always working
             clk_enable => roll_s,
             add_or_sub => add_or_sub_s,
             Q          => floor_s
