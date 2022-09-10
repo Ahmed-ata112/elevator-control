@@ -84,7 +84,7 @@ begin
         end if;
     end process;
 
-    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, mv_up_s, mv_down_s)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, mv_up_s, mv_down_s,roll_s)
     begin
         --default values
         mv_up_s              <= mv_up_r;
