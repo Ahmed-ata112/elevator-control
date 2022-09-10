@@ -12,57 +12,230 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# OpenFile ./elevator_ctrl_tb.vhd
-vsim work.resolver_comb
-# vsim work.resolver_comb 
-# Start time: 21:49:36 on Sep 10,2022
+# Loading project proc
+# reading C:/intelFPGA/21.1/questa_fse/win64/../modelsim.ini
+file mkdir {D:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa}
+# Loading project questa_for_project
+# Compile of b_reg_test.vhd was successful.
+# Compile of control_unit_tb.vhd failed with 1 errors.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of ssd.vhd failed with 1 errors.
+# 9 compiles, 2 failed with 2 errors.
+# Compile of b_reg_test.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.resolver_fsm_tb -voptargs=+acc
+# vsim work.resolver_fsm_tb -voptargs="+acc" 
+# Start time: 00:52:45 on Sep 11,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "elevator_ctrl(rtl)".
+# ** Note: (vopt-143) Recognized 1 FSM in architecture body "resolver_fsm(rtl)".
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.resolver_comb(arch)#1
+# Loading work.elevator_ctrl(rtl)#1
+# Loading work.one_sec_timer(rtl)#1
+# Loading work.floor_counter(behavior)#1
+add wave -position insertpoint  \
+sim:/resolver_fsm_tb/buttons \
+sim:/resolver_fsm_tb/clk \
+sim:/resolver_fsm_tb/clk_period \
+sim:/resolver_fsm_tb/door_open \
+sim:/resolver_fsm_tb/downs \
+sim:/resolver_fsm_tb/floor \
+sim:/resolver_fsm_tb/mv_down \
+sim:/resolver_fsm_tb/mv_up \
+sim:/resolver_fsm_tb/N \
+sim:/resolver_fsm_tb/req \
+sim:/resolver_fsm_tb/req_i \
+sim:/resolver_fsm_tb/reset_n \
+sim:/resolver_fsm_tb/ups
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+force -freeze sim:/resolver_fsm_tb/ups 10'h000 0
+force -freeze sim:/resolver_fsm_tb/ups 10'hF0F 0
+force -freeze sim:/resolver_fsm_tb/downs 10'hF6F 0
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+force -freeze sim:/resolver_fsm_tb/ups 10'hF0F 0
+force -freeze sim:/resolver_fsm_tb/downs 10'hF6F 0
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# Compile of b_reg_test.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.resolver_fsm_tb
+# End time: 00:56:10 on Sep 11,2022, Elapsed time: 0:03:25
+# Errors: 0, Warnings: 14
+# vsim work.resolver_fsm_tb 
+# Start time: 00:56:10 on Sep 11,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.resolver_fsm_tb(bench)#1
+add wave -position insertpoint  \
+sim:/resolver_fsm_tb/buttons \
+sim:/resolver_fsm_tb/clk \
+sim:/resolver_fsm_tb/clk_period \
+sim:/resolver_fsm_tb/door_open \
+sim:/resolver_fsm_tb/downs \
+sim:/resolver_fsm_tb/floor \
+sim:/resolver_fsm_tb/req \
+sim:/resolver_fsm_tb/reset_n \
+sim:/resolver_fsm_tb/ups
+# Compile of b_reg_test.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
 # Loading ieee.math_real(body)
-# Loading work.resolver_comb(arch)#1
-add wave -position end  sim:/resolver_comb/ups
-add wave -position insertpoint  \
-sim:/resolver_comb/buttons \
-sim:/resolver_comb/clk \
-sim:/resolver_comb/downs \
-sim:/resolver_comb/highest_dest \
-sim:/resolver_comb/lowest_dest \
-sim:/resolver_comb/N \
-sim:/resolver_comb/no_button_is_pressed \
-sim:/resolver_comb/none_is_pressed \
-sim:/resolver_comb/ups
-force -freeze sim:/resolver_comb/clk 1 0, 0 {5 ns} -r 10
-force buttons 0FF
-force ups 030
-force downs 030
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
 run
-force buttons 0F0
-run
-force buttons 0F8
-run
-force buttons 0F7
-run
-force ups 000
-run
-force downs 000
-run
-force buttons 000
-run
-force buttons FFF
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
 run
 run
 run
 run
-force buttons F0F
 run
 run
 run
-force buttons FFF
 run
-force downs 00F
 run
-
 run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/req 4'h0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Causality operation skipped due to absence of debug database file

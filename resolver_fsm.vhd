@@ -29,6 +29,8 @@ architecture rtl of resolver_fsm is
     signal none_is_pressed_s : std_logic;
     signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal req_r             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
 
     component resolver_comb
         generic(
@@ -57,16 +59,18 @@ begin
 
             else
                 current_state <= next_state;
-
+                req_r         <= req_s;
             end if;
         end if;
     end process;                        -- clk_p
 
-    state_p : process(door_open, lowest_dest_s, current_state, req, downs, ups, floor, highest_dest_s, none_is_pressed_s, buttons)
+    state_p : process(door_open, lowest_dest_s, current_state, downs, ups, floor, highest_dest_s, none_is_pressed_s, buttons, req_r)
     begin
+        next_state <= current_state;
+        req_s      <= req_r;
         case current_state is
             when none_state =>
-                req <= (others => '1'); -- NONE VALUE FOR REQ 
+                req_s <= (others => '1'); -- NONE VALUE FOR REQ 
 
                 if (none_is_pressed_s <= '0') then
                     if (highest_dest_s > unsigned(floor)) then
@@ -78,19 +82,20 @@ begin
 
             when upping_state =>
 
-                req <= std_logic_vector(highest_dest_s);
-                if (buttons(to_integer(unsigned(floor))) = '0' or ups(to_integer(unsigned(floor))) = '0' or req = floor) then
+                req_s <= std_logic_vector(highest_dest_s);
+                if (buttons(to_integer(unsigned(floor))) = '0' or ups(to_integer(unsigned(floor))) = '0' or std_logic_vector(highest_dest_s) = floor) then
                     next_state <= reached_a_floor;
                 end if;
 
             when downing_state =>
-                req <= std_logic_vector(lowest_dest_s);
-                if (buttons(to_integer(unsigned(floor))) = '0' or downs(to_integer(unsigned(floor))) = '0' or req = floor) then
+
+                req_s <= std_logic_vector(lowest_dest_s);
+                if (buttons(to_integer(unsigned(floor))) = '0' or downs(to_integer(unsigned(floor))) = '0' or std_logic_vector(lowest_dest_s) = floor) then
                     next_state <= reached_a_floor;
                 end if;
 
             when reached_a_floor =>
-                req <= floor;
+                req_s <= floor;
                 -- wait untill he opens the door then change the req
                 if (door_open = '1') then
                     next_state <= none_state;
@@ -112,5 +117,7 @@ begin
             highest_dest    => highest_dest_s,
             lowest_dest     => lowest_dest_s
         );
+    req <= req_r;
 
 end architecture;
+
