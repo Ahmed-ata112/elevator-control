@@ -73,7 +73,8 @@ begin
             when none_state =>
                 req_s <= NONE_REQ;      -- NONE VALUE FOR REQ 
 
-                if (none_is_pressed_s <= '0') then
+                -- when something is pressed and the door is closed
+                if (none_is_pressed_s = '0' and door_open = '0') then
                     if (highest_dest_s > unsigned(floor)) then
                         next_state <= upping_state;
                     elsif (lowest_dest_s < unsigned(floor)) then
