@@ -17,7 +17,7 @@ entity top_module is
         buttons : in  std_logic_vector(N - 1 downto 0);
         up      : out std_logic;
         down    : out std_logic;
-        door     : out std_logic;
+        door    : out std_logic;
         floor   : out std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0)
     );
 end;
@@ -44,7 +44,8 @@ architecture bench of top_module is
 
     component elevator_ctrl
         generic(
-            N : integer
+            N        : integer;
+            clk_freq : integer
         );
         port(
             clk       : in  std_logic;
@@ -71,39 +72,40 @@ architecture bench of top_module is
 
 begin
 
-resolver_fsm_inst : resolver_fsm
-    generic map(
-        N => N
-    )
-    port map(
-        clk       => clk,
-        reset_n   => reset_n,
-        ups       => ups,
-        downs     => downs,
-        buttons   => buttons,
-        mv_up     => mv_up_s,
-        mv_down   => mv_down_s,
-        door_open => door_open_s,
-        floor     => floor_s,
-        req       => req_s
-    );
+    resolver_fsm_inst : resolver_fsm
+        generic map(
+            N => N
+        )
+        port map(
+            clk       => clk,
+            reset_n   => reset_n,
+            ups       => ups,
+            downs     => downs,
+            buttons   => buttons,
+            mv_up     => mv_up_s,
+            mv_down   => mv_down_s,
+            door_open => door_open_s,
+            floor     => floor_s,
+            req       => req_s
+        );
 
-elevator_ctrl_inst : component elevator_ctrl
-    generic map(
-        N => N
-    )
-    port map(
-        clk       => clk,
-        reset_n   => reset_n,
-        req_i     => req_s,
-        mv_up     => mv_up_s,
-        mv_down   => mv_down_s,
-        door_open => door_open_s,
-        floor     => floor_s
-    );
+    elevator_ctrl_inst : component elevator_ctrl
+        generic map(
+            N        => N,
+            clk_freq => 50_000_000
+        )
+        port map(
+            clk       => clk,
+            reset_n   => reset_n,
+            req_i     => req_s,
+            mv_up     => mv_up_s,
+            mv_down   => mv_down_s,
+            door_open => door_open_s,
+            floor     => floor_s
+        );
     up    <= mv_up_s;
     down  <= mv_down_s;
-    door   <= door_open_s;    
-    floor <=  floor_s;  
-    
+    door  <= door_open_s;
+    floor <= floor_s;
+
 end bench;
