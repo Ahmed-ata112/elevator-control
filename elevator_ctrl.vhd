@@ -138,7 +138,6 @@ begin
                         mv_down_s  <= '1';
                         next_state <= go_down_state;
                     else
-                        -- stop where You are
                         timer_reset <= '0';
                     end if;
                 end if;

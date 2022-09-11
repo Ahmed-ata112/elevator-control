@@ -31,6 +31,7 @@ architecture rtl of resolver_fsm is
     signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal req_r             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+    constant NONE_REQ        : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
 
     component resolver_comb
         generic(
@@ -70,7 +71,7 @@ begin
         req_s      <= req_r;
         case current_state is
             when none_state =>
-                req_s <= (others => '1'); -- NONE VALUE FOR REQ 
+                req_s <= NONE_REQ;      -- NONE VALUE FOR REQ 
 
                 if (none_is_pressed_s <= '0') then
                     if (highest_dest_s > unsigned(floor)) then
