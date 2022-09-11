@@ -61,6 +61,33 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+
+
+
+
+
+set_location_assignment PIN_U7 -to bn[0]
+set_location_assignment PIN_W9 -to bn[1]
+set_location_assignment PIN_M7 -to bn[2]
+set_location_assignment PIN_M6 -to bn[3]
+
+set_location_assignment PIN_P22 -to reset_n
+
+set_location_assignment PIN_AA2 -to mv_up
+set_location_assignment PIN_AA1 -to mv_dn
+set_location_assignment PIN_W2 -to door_open
+set_location_assignment PIN_U21 -to HEX0[0]
+set_location_assignment PIN_V21 -to HEX0[1]
+set_location_assignment PIN_W22 -to HEX0[2]
+set_location_assignment PIN_W21 -to HEX0[3]
+set_location_assignment PIN_Y22 -to HEX0[4]
+set_location_assignment PIN_Y21 -to HEX0[5]
+set_location_assignment PIN_AA22 -to HEX0[6]
+set_location_assignment PIN_M9 -to clk
+
+
+set_global_assignment -name VHDL_FILE ssd.vhd
 set_global_assignment -name VHDL_FILE top_module.vhd
 set_global_assignment -name VHDL_FILE resolver_fsm.vhd
 set_global_assignment -name SDC_FILE elevator_ctrl.sdc
