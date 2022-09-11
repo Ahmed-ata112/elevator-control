@@ -64,7 +64,6 @@ set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VHDL_FILE top_module.vhd
 set_global_assignment -name VHDL_FILE resolver_fsm.vhd
 set_global_assignment -name SDC_FILE elevator_ctrl.sdc
-set_global_assignment -name SDC_FILE " prbs.sdc"
 set_global_assignment -name VHDL_FILE resolver_comb.vhd
 set_global_assignment -name VHDL_FILE one_sec_timer.vhd
 set_global_assignment -name VHDL_FILE floor_counter.vhd

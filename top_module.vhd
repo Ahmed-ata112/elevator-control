@@ -58,12 +58,6 @@ architecture bench of top_module is
         );
     end component;
 
-    -- Ports
-    -- signal clk       : std_logic;
-    -- signal reset_n   : std_logic;
-    -- signal ups       : std_logic_vector(N - 1 downto 0);
-    -- signal downs     : std_logic_vector(N - 1 downto 0);
-    -- signal buttons   : std_logic_vector(N - 1 downto 0);
     signal mv_up_s     : std_logic;
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;

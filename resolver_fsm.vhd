@@ -67,7 +67,6 @@ begin
     begin
         if (rising_edge(clk)) then
             if (reset_n = '0') then
-                --  i should put all the values in the state itself to avoid any multiple drivers
                 current_state <= none_state; -- it goes to the ground floor
 
             else
@@ -101,7 +100,9 @@ begin
                         next_state <= upping_state;
                     elsif (lowest_dest_s < unsigned(floor)) then
                         next_state <= downing_state;
-                    end if;
+                    else 
+                        next_state <= reached_a_floor;
+                        end if;
                 end if;
 
             when upping_state =>
@@ -128,14 +129,15 @@ begin
                 end if;
 
             when reached_a_floor =>
-                buttons_s(to_integer(unsigned(floor))) <= '1';
-                ups_s(to_integer(unsigned(floor)))     <= '1';
-                downs_s(to_integer(unsigned(floor)))   <= '1';
+                -- to see it the buttons are still pressed even after its reached the floor
+                buttons_s(to_integer(unsigned(floor))) <= buttons(to_integer(unsigned(floor)));
+                ups_s(to_integer(unsigned(floor)))     <= ups(to_integer(unsigned(floor)));
+                downs_s(to_integer(unsigned(floor)))   <= downs(to_integer(unsigned(floor)));
 
                 req_s <= floor;
                 -- wait untill he opens the door then change the req to an appropriate value OR go to none_state
                 if (door_open = '1') then
-                    if (came_from_r = up) then
+                    if (came_from_r = up) then  
                         next_state <= upping_state;
                     elsif (came_from_r = down) then
                         next_state <= downing_state;

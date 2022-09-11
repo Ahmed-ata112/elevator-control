@@ -28,19 +28,19 @@ begin
     result_process : process(clk)
     begin
         if (rising_edge(clk)) then
-            high_priority : for k in N - 1 downto 0 loop
+            high_lp : for k in N - 1 downto 0 loop
                 if (buttons(k) = '0' or (no_button_is_pressed = '1' and (downs(k) = '0' or ups(k) = '0'))) then
                     highest_dest <= to_unsigned(k, highest_dest'length);
                     exit;
                 end if;
-            end loop high_priority;
+            end loop high_lp;
 
-            low_priority : for k in 0 to N - 1 loop
+            low_lp : for k in 0 to N - 1 loop
                 if (buttons(k) = '0' or (no_button_is_pressed = '1' and (downs(k) = '0' or ups(k) = '0'))) then
                     lowest_dest <= to_unsigned(k, highest_dest'length);
                     exit;
                 end if;
-            end loop low_priority;
+            end loop low_lp;
         end if;
     end process;                        -- result_process
     no_button_is_pressed <= '1' when buttons = "1111111111" else '0';
