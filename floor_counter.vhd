@@ -12,7 +12,7 @@ entity floor_counter is
         clock      : in  std_logic;
         reset_n    : in  std_logic;
         clk_enable : in  std_logic;
-        add_or_sub : in  std_logic;
+        add_or_sub : in  std_logic;     -- 1 for add, 0 for sub
         Q          : out unsigned(n - 1 downto 0));
 
 end entity;

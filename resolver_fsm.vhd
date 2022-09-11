@@ -74,10 +74,9 @@ begin
                 current_state <= next_state;
                 came_from_r   <= came_from_s;
                 req_r         <= req_s;
-
-                ups_r     <= ups_s;
-                downs_r   <= downs_s;
-                buttons_r <= buttons_s;
+                ups_r         <= ups_s;
+                downs_r       <= downs_s;
+                buttons_r     <= buttons_s;
             end if;
         end if;
     end process;                        -- clk_p
@@ -109,11 +108,11 @@ begin
 
                 req_s <= std_logic_vector(highest_dest_s);
                 if (std_logic_vector(highest_dest_s) = floor) then
-                    next_state  <= reached_a_floor;
                     came_from_s <= none; -- this is the end of the upping state
-                elsif (buttons_r(to_integer(unsigned(floor))) = '0' or ups_r(to_integer(unsigned(floor))) = '0') then
                     next_state  <= reached_a_floor;
+                elsif (buttons_r(to_integer(unsigned(floor))) = '0' or ups_r(to_integer(unsigned(floor))) = '0') then
                     came_from_s <= up;  -- You should return to the downing state
+                    next_state  <= reached_a_floor;
                 end if;
 
             when downing_state =>
@@ -121,12 +120,11 @@ begin
                 req_s <= std_logic_vector(lowest_dest_s);
 
                 if (std_logic_vector(lowest_dest_s) = floor) then
-                    next_state <= reached_a_floor;
-
                     came_from_s <= none; -- this is the end of the downing state
-                elsif (buttons_r(to_integer(unsigned(floor))) = '0' or downs_r(to_integer(unsigned(floor))) = '0') then
                     next_state  <= reached_a_floor;
+                elsif (buttons_r(to_integer(unsigned(floor))) = '0' or downs_r(to_integer(unsigned(floor))) = '0') then
                     came_from_s <= down; -- You should return to the downing state
+                    next_state  <= reached_a_floor;
                 end if;
 
             when reached_a_floor =>
@@ -162,6 +160,7 @@ begin
             highest_dest    => highest_dest_s,
             lowest_dest     => lowest_dest_s
         );
+
     req <= req_r;
 
 end architecture;

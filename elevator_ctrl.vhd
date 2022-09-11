@@ -4,7 +4,8 @@ use ieee.numeric_std.all;
 use IEEE.math_real.all;
 entity elevator_ctrl is
     generic(
-        N : integer := 10
+        N        : integer := 10;
+        clk_freq : integer := 50_000_000
     );
     port(
         clk       : in  std_logic;
@@ -44,6 +45,9 @@ architecture rtl of elevator_ctrl is
     constant NONE_REQ  : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
 
     component one_sec_timer
+        generic(
+            clk_freq : integer
+        );
         port(
             fast_Clk     : in  std_logic;
             reset        : in  std_logic;
@@ -103,8 +107,9 @@ begin
 
                 if counter = to_unsigned(0, 4) then
                     -- we are in a safe place now
-                    timer_reset <= '0';
-                    next_state  <= not_working_state;
+                    -- timer_reset <= '0';
+                    next_state <= not_working_state;
+
                 elsif roll_s = '1' then
                     if mv_up_s = '1' then
                         --add the floor
@@ -125,20 +130,18 @@ begin
                 door_open_s <= '0';
 
                 --counter remains zero
-                timer_reset <= '1';
+                timer_reset <= '0';
 
                 if (req_i /= NONE_REQ) then
                     if (unsigned(req_i) = floor_s) then
-                        door_open_s <= '1';
-                        next_state  <= door_open_state;
+                        -- door_open_s <= '1';
+                        next_state <= door_open_state;
                     elsif (unsigned(req_i) > floor_s) then
-                        mv_up_s    <= '1';
+                        -- mv_up_s    <= '1';
                         next_state <= go_up_state;
                     elsif (unsigned(req_i) < floor_s) then
-                        mv_down_s  <= '1';
+                        -- mv_down_s  <= '1';
                         next_state <= go_down_state;
-                    else
-                        timer_reset <= '0';
                     end if;
                 end if;
 
@@ -153,8 +156,8 @@ begin
                     add_or_sub_s         <= '1';
 
                     if (unsigned(req_i) < floor_s) then
-                        mv_up_s    <= '0';
-                        mv_down_s  <= '0';
+                        -- mv_up_s    <= '0';
+                        -- mv_down_s  <= '1';
                         next_state <= go_down_state;
                     end if;
                 end if;
@@ -162,9 +165,9 @@ begin
                 -- TODO : it will the resolver duty to ensure that no req changes on the edges 
                 if (unsigned(req_i) = floor_s) then
                     -- timer_reset <= '0';
-                    door_open_s <= '1';
-                    mv_up_s     <= '0';
-                    next_state  <= door_open_state;
+                    -- door_open_s <= '1';
+                    -- mv_up_s     <= '0';
+                    next_state <= door_open_state;
                 end if;
 
             when go_down_state =>
@@ -178,8 +181,8 @@ begin
                     add_or_sub_s         <= '0';
 
                     if (unsigned(req_i) > floor_s) then
-                        mv_up_s    <= '1';
-                        mv_down_s  <= '0';
+                        -- mv_up_s    <= '1';
+                        -- mv_down_s  <= '0';
                         next_state <= go_up_state;
 
                     end if;
@@ -187,8 +190,8 @@ begin
 
                 if (unsigned(req_i) = floor_s) then
 
-                    door_open_s <= '1';
-                    mv_down_s   <= '0';
+                    -- door_open_s <= '1';
+                    -- mv_down_s   <= '0';
 
                     next_state <= door_open_state;
                 end if;
@@ -199,9 +202,9 @@ begin
                 door_open_s <= '1';
                 -- we should stay here as long as the door is open then move to the not working
                 if roll_s = '1' then
-                    door_open_s <= '0';
+                    -- door_open_s <= '0';
                     -- timer_reset <= '0';
-                    next_state  <= not_working_state;
+                    next_state <= not_working_state;
 
                 end if;
         end case;
@@ -209,6 +212,9 @@ begin
     end process;                        -- state_transitions_process
 
     U1 : one_sec_timer
+        generic map(
+            clk_freq => clk_freq
+        )
         port map(
             fast_Clk     => clk,
             reset        => timer_reset,

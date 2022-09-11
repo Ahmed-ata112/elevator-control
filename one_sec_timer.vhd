@@ -3,6 +3,9 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity one_sec_timer is
+    generic(
+        clk_freq : integer := 50_000_000
+    );
     port(
         fast_Clk     : in  std_logic;
         reset        : in  std_logic;
@@ -22,7 +25,7 @@ begin
                 fast_count        <= (others => '0');
                 slow_count_signal <= (others => '0');
 
-            elsif fast_count = 19 then
+            elsif fast_count = clk_freq - 1 then
 
                 fast_count <= (others => '0');
                 if (slow_count_signal = to_unsigned(1, 4)) then

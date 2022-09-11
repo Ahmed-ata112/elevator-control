@@ -30,7 +30,8 @@ architecture bench of resolver_fsm_tb is
 
     component elevator_ctrl
         generic(
-            N : integer
+            N        : integer;
+            clk_freq : integer
         );
         port(
             clk       : in  std_logic;
@@ -81,7 +82,8 @@ begin
 
     elevator_ctrl_inst : component elevator_ctrl
         generic map(
-            N => N
+            N        => N,
+            clk_freq => 20
         )
         port map(
             clk       => clk,
