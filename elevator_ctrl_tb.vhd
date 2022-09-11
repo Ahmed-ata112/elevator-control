@@ -60,8 +60,6 @@ architecture bench of resolver_fsm_tb is
     signal floor     : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal req       : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
 
-    signal req_i : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-
 begin
 
     resolver_fsm_inst : resolver_fsm

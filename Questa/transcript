@@ -1,0 +1,90 @@
+# Compile of b_reg_test.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+vsim work.resolver_fsm_tb
+# vsim work.resolver_fsm_tb 
+# Start time: 12:51:30 on Sep 11,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+add wave -position insertpoint  \
+sim:/resolver_fsm_tb/buttons \
+sim:/resolver_fsm_tb/clk \
+sim:/resolver_fsm_tb/clk_period \
+sim:/resolver_fsm_tb/door_open \
+sim:/resolver_fsm_tb/downs \
+sim:/resolver_fsm_tb/floor \
+sim:/resolver_fsm_tb/mv_down \
+sim:/resolver_fsm_tb/mv_up \
+sim:/resolver_fsm_tb/req \
+sim:/resolver_fsm_tb/reset_n \
+sim:/resolver_fsm_tb/ups
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 34004
+#           Attempting to use alternate WLF file "./wlftfrx66w".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftfrx66w
+add wave -position end  sim:/resolver_fsm_tb/resolver_fsm_inst/current_state
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/current_state
+run
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 1  Instance: /resolver_fsm_tb/resolver_fsm_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/req 4'h0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

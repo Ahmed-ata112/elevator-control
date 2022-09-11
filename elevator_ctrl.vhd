@@ -40,7 +40,8 @@ architecture rtl of elevator_ctrl is
     signal mv_up_s     : std_logic;
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;
-    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '0');
+    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0)         := (others => '0');
+    constant NONE_REQ  : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
 
     component one_sec_timer
         port(
@@ -84,7 +85,7 @@ begin
         end if;
     end process;
 
-    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, mv_up_s, mv_down_s,roll_s)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, mv_up_s, mv_down_s, roll_s)
     begin
         --default values
         mv_up_s              <= mv_up_r;
@@ -126,18 +127,20 @@ begin
                 --counter remains zero
                 timer_reset <= '1';
 
-                if (unsigned(req_i) = floor_s) then
-                    door_open_s <= '1';
-                    next_state  <= door_open_state;
-                elsif (unsigned(req_i) > floor_s) then
-                    mv_up_s    <= '1';
-                    next_state <= go_up_state;
-                elsif (unsigned(req_i) < floor_s) then
-                    mv_down_s  <= '1';
-                    next_state <= go_down_state;
-                else
-                    -- stop where You are
-                    timer_reset <= '0';
+                if (req_i /= NONE_REQ) then
+                    if (unsigned(req_i) = floor_s) then
+                        door_open_s <= '1';
+                        next_state  <= door_open_state;
+                    elsif (unsigned(req_i) > floor_s) then
+                        mv_up_s    <= '1';
+                        next_state <= go_up_state;
+                    elsif (unsigned(req_i) < floor_s) then
+                        mv_down_s  <= '1';
+                        next_state <= go_down_state;
+                    else
+                        -- stop where You are
+                        timer_reset <= '0';
+                    end if;
                 end if;
 
             when go_up_state =>
