@@ -26,12 +26,24 @@ architecture rtl of resolver_fsm is
     signal current_state : state_type;
     signal next_state    : state_type;
 
+    type came_from_type is (none, up, down);
+    signal came_from_s : came_from_type;
+    signal came_from_r : came_from_type;
+
     signal none_is_pressed_s : std_logic;
     signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal req_r             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-    constant NONE_REQ        : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
+    signal ups_s             : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal downs_s           : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal buttons_s         : std_logic_vector(N - 1 downto 0) := (others => '1');
+
+    signal req_r     : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal ups_r     : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal downs_r   : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal buttons_r : std_logic_vector(N - 1 downto 0) := (others => '1');
+
+    constant NONE_REQ : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
 
     component resolver_comb
         generic(
@@ -60,15 +72,26 @@ begin
 
             else
                 current_state <= next_state;
+                came_from_r   <= came_from_s;
                 req_r         <= req_s;
+
+                ups_r     <= ups_s;
+                downs_r   <= downs_s;
+                buttons_r <= buttons_s;
             end if;
         end if;
     end process;                        -- clk_p
 
-    state_p : process(door_open, lowest_dest_s, current_state, downs, ups, floor, highest_dest_s, none_is_pressed_s, buttons, req_r)
+    state_p : process(door_open, lowest_dest_s, current_state, downs, ups, floor, highest_dest_s, none_is_pressed_s, buttons, req_r, came_from_r, buttons_r, downs_r, ups_r)
     begin
-        next_state <= current_state;
-        req_s      <= req_r;
+        next_state  <= current_state;
+        came_from_s <= came_from_r;
+        req_s       <= req_r;
+
+        ups_s     <= ups_r and ups;
+        downs_s   <= downs_r and downs;
+        buttons_s <= buttons_r and buttons;
+
         case current_state is
             when none_state =>
                 req_s <= NONE_REQ;      -- NONE VALUE FOR REQ 
@@ -85,22 +108,42 @@ begin
             when upping_state =>
 
                 req_s <= std_logic_vector(highest_dest_s);
-                if (buttons(to_integer(unsigned(floor))) = '0' or ups(to_integer(unsigned(floor))) = '0' or std_logic_vector(highest_dest_s) = floor) then
-                    next_state <= reached_a_floor;
+                if (std_logic_vector(highest_dest_s) = floor) then
+                    next_state  <= reached_a_floor;
+                    came_from_s <= none; -- this is the end of the upping state
+                elsif (buttons_r(to_integer(unsigned(floor))) = '0' or ups_r(to_integer(unsigned(floor))) = '0') then
+                    next_state  <= reached_a_floor;
+                    came_from_s <= up;  -- You should return to the downing state
                 end if;
 
             when downing_state =>
 
                 req_s <= std_logic_vector(lowest_dest_s);
-                if (buttons(to_integer(unsigned(floor))) = '0' or downs(to_integer(unsigned(floor))) = '0' or std_logic_vector(lowest_dest_s) = floor) then
+
+                if (std_logic_vector(lowest_dest_s) = floor) then
                     next_state <= reached_a_floor;
+
+                    came_from_s <= none; -- this is the end of the downing state
+                elsif (buttons_r(to_integer(unsigned(floor))) = '0' or downs_r(to_integer(unsigned(floor))) = '0') then
+                    next_state  <= reached_a_floor;
+                    came_from_s <= down; -- You should return to the downing state
                 end if;
 
             when reached_a_floor =>
+                buttons_s(to_integer(unsigned(floor))) <= '1';
+                ups_s(to_integer(unsigned(floor)))     <= '1';
+                downs_s(to_integer(unsigned(floor)))   <= '1';
+
                 req_s <= floor;
-                -- wait untill he opens the door then change the req
+                -- wait untill he opens the door then change the req to an appropriate value OR go to none_state
                 if (door_open = '1') then
-                    next_state <= none_state;
+                    if (came_from_r = up) then
+                        next_state <= upping_state;
+                    elsif (came_from_r = down) then
+                        next_state <= downing_state;
+                    else                -- came_from_s = none
+                        next_state <= none_state;
+                    end if;
                 end if;
 
         end case;
@@ -112,9 +155,9 @@ begin
         )
         port map(
             clk             => clk,
-            ups             => ups,
-            downs           => downs,
-            buttons         => buttons,
+            ups             => ups_r,
+            downs           => downs_r,
+            buttons         => buttons_r,
             none_is_pressed => none_is_pressed_s,
             highest_dest    => highest_dest_s,
             lowest_dest     => lowest_dest_s

@@ -27,19 +27,29 @@ begin
         end if;
     end process;
 
-    p2 : process(count, b_in, b_out_s)
-    begin                               -- 0 => x
-        -- 1 => 10
-        b_next <= (others => '0');
+    -- p2 : process(count, b_in, b_out_s)
+    -- begin                               -- 0 => x
+    --     -- 1 => 10
+    --     b_next <= (others => '0');
 
-        for i in 0 to N - 1 loop
-            if (b_in(i) = '1') then
-                b_next(i) <= '1';
-            elsif count /= "0101" then
-                b_next(i) <= b_out_s(i);
-            end if;
-        end loop;
+    --     for i in 0 to N - 1 loop
+    --         if (b_in(i) = '1') then
+    --             b_next(i) <= '1';
+    --         elsif count /= "0101" then
+    --             b_next(i) <= b_out_s(i);
+    --         end if;
+    --     end loop;
 
-    end process;                        -- p2
+    -- end process;                        -- p2
+
+    p1 : process(count, b_in, b_out_s)
+    begin
+        b_next <= b_out_s or b_in;
+        if count = "0101" then
+            b_next <= (others => '1');
+        end if;
+
+    end process;                        -- p1
+
     b_out <= b_out_s;
 end architecture;
