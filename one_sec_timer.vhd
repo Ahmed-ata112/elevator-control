@@ -35,7 +35,6 @@ begin
                 else
                     slow_count_signal <= slow_count_signal + 1;
                 end if;
-
             else
                 fast_count <= fast_count + 1;
             end if;

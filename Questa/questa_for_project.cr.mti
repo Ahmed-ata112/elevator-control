@@ -1,22 +1,23 @@
-{D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd}
+{D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
 -- Loading package MATH_REAL
--- Compiling entity resolver_comb
--- Compiling architecture arch of resolver_comb
+-- Compiling entity elevator_ctrl
+-- Compiling architecture rtl of elevator_ctrl
 
-} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:\Academic edu\Misc\PT intern\repos\pti-final-project\resolver_fsm.vhd}
+} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd} {1 {vcom -work work -2008 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
 -- Loading package MATH_REAL
--- Compiling entity resolver_fsm
--- Compiling architecture rtl of resolver_fsm
+-- Loading package ENV
+-- Compiling entity resolver_fsm_tb
+-- Compiling architecture bench of resolver_fsm_tb
 
 } {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
@@ -27,7 +28,7 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity one_sec_timer
 -- Compiling architecture rtl of one_sec_timer
 
-} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd}
+} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd} {1 {vcom -work work -2008 -explicit -vopt -stats=none {D:\Academic edu\Misc\PT intern\repos\pti-final-project\floor_counter.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
