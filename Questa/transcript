@@ -669,3 +669,289 @@ run
 # Compile of resolver_comb.vhd was successful.
 # Compile of resolver_fsm.vhd was successful.
 # 6 compiles, 1 failed with 1 error.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+run
+# ** Note: 50000000
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 30 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+run
+# ** Note: 500
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+force -freeze sim:/resolver_fsm_tb/buttons 10'h3BF 0 -cancel 30
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 10'h3BF 0 -cancel 30
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 10'h2FF 0 -cancel 30
+force -freeze sim:/resolver_fsm_tb/ups 10'h3BF 0 -cancel 30
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run 3 us
+force -freeze sim:/resolver_fsm_tb/ups 10'h3BD 0 -cancel 30
+force -freeze sim:/resolver_fsm_tb/downs 10'h3BF 0 -cancel 30
+run 3 us
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/downs 10'h3FB 0 -cancel 30
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/ups 10'h3FD 0 
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/ups 10'h3FF 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

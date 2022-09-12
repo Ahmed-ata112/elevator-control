@@ -95,6 +95,8 @@ begin
                 req_s <= NONE_REQ;      -- NONE VALUE FOR REQ 
 
                 -- when something is pressed and the door is closed
+                -- TODO : make it more smart when deciding which direction to go
+                -- NOTE: the current design enures than no starvation occurs and with no fairness
                 if (none_is_pressed_s = '0' and door_open = '0' and highest_dest_s /= unsigned(NONE_REQ)) then
                     if (highest_dest_s > unsigned(floor)) then
                         next_state <= upping_state;
