@@ -114,9 +114,15 @@ begin
         downs   <= (others => '1');
         buttons <= (others => '1');
         wait for clk_period;
+        -- this happens at the falling edge of the clock
         reset_n <= '1';
-        wait for clk_period;
+        wait for clk_period * clk_freq * 3; --simulates a 3 sec
+        ups     <= (2 => '0', others => '1');
 
+        wait for clk_period * clk_freq * 4.5; --simulates a 4.5 sec
+        report "BLOCK 1, CHECk";
+
+        assert floor = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor) severity error;
         wait;
     end process;                        -- p1
 end;
