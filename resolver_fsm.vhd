@@ -17,7 +17,7 @@ entity resolver_fsm is
         mv_down   : in  std_logic;
         door_open : in  std_logic;
         floor     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-        req       : out std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0)
+        req       : out std_logic_vector(integer(ceil(log2(real(N)))) downto 0)
     );
 end entity resolver_fsm;
 
@@ -25,21 +25,21 @@ architecture rtl of resolver_fsm is
     type state_type is (none_state, upping_state, downing_state, reached_a_floor);
     signal current_state : state_type;
     signal next_state    : state_type;
-    constant NONE_REQ    : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
+    constant NONE_REQ    : std_logic_vector(integer(ceil(log2(real(N)))) downto 0) := (others => '1');
 
     type came_from_type is (none, up, down);
     signal came_from_s : came_from_type;
     signal came_from_r : came_from_type;
 
     signal none_is_pressed_s : std_logic;
-    signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0) := unsigned(NONE_REQ);
-    signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0) := unsigned(NONE_REQ);
-    signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal ups_s             : std_logic_vector(N - 1 downto 0)                    := (others => '1');
-    signal downs_s           : std_logic_vector(N - 1 downto 0)                    := (others => '1');
-    signal buttons_s         : std_logic_vector(N - 1 downto 0)                    := (others => '1');
+    signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
+    signal ups_s             : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal downs_s           : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal buttons_s         : std_logic_vector(N - 1 downto 0) := (others => '1');
 
-    signal req_r     : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal req_r     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
     signal ups_r     : std_logic_vector(N - 1 downto 0) := (others => '1');
     signal downs_r   : std_logic_vector(N - 1 downto 0) := (others => '1');
     signal buttons_r : std_logic_vector(N - 1 downto 0) := (others => '1');
@@ -97,7 +97,7 @@ begin
                 -- when something is pressed and the door is closed
                 -- TODO : make it more smart when deciding which direction to go
                 -- NOTE: the current design enures than no starvation occurs and with no fairness
-                if (none_is_pressed_s = '0' and door_open = '0' and highest_dest_s /= unsigned(NONE_REQ)) then
+                if (none_is_pressed_s = '0' and door_open = '0') then
                     if (highest_dest_s > unsigned(floor)) then
                         next_state <= upping_state;
                     elsif (lowest_dest_s < unsigned(floor)) then
@@ -109,7 +109,7 @@ begin
 
             when upping_state =>
 
-                req_s <= std_logic_vector(highest_dest_s);
+                req_s <= '0' & std_logic_vector(highest_dest_s);
                 if (std_logic_vector(highest_dest_s) = floor) then
                     came_from_s <= none; -- this is the end of the upping state
                     next_state  <= reached_a_floor;
@@ -120,7 +120,7 @@ begin
 
             when downing_state =>
 
-                req_s <= std_logic_vector(lowest_dest_s);
+                req_s <= '0' & std_logic_vector(lowest_dest_s);
 
                 if (std_logic_vector(lowest_dest_s) = floor) then
                     came_from_s <= none; -- this is the end of the downing state
@@ -136,7 +136,7 @@ begin
                 ups_s(to_integer(unsigned(floor)))     <= ups(to_integer(unsigned(floor)));
                 downs_s(to_integer(unsigned(floor)))   <= downs(to_integer(unsigned(floor)));
 
-                req_s <= floor;
+                req_s <= '0' & floor;
                 -- wait untill he opens the door then change the req to an appropriate value OR go to none_state
                 if (door_open = '1') then
                     if (came_from_r = up) then

@@ -10,7 +10,7 @@ entity elevator_ctrl is
     port(
         clk       : in  std_logic;
         reset_n   : in  std_logic;
-        req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+        req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
         mv_up     : out std_logic;
         mv_down   : out std_logic;
         door_open : out std_logic;
@@ -32,16 +32,16 @@ architecture rtl of elevator_ctrl is
     signal counter              : unsigned(3 downto 0) := (others => '0');
 
     -- registers for output
-    signal mv_up_r   : std_logic := ('0');
-    signal mv_down_r : std_logic := ('0');
+    signal mv_up_r     : std_logic := ('0');
+    signal mv_down_r   : std_logic := ('0');
     signal door_open_r : std_logic := ('0');
 
     -- signals before those regs
     signal mv_up_s     : std_logic;
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;
-    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0)         := (others => '0');
-    constant NONE_REQ  : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
+    signal floor_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0)     := (others => '0');
+    constant NONE_REQ  : std_logic_vector(integer(ceil(log2(real(N)))) downto 0) := (others => '1');
 
     component one_sec_timer
         generic(
@@ -134,13 +134,13 @@ begin
                 timer_reset <= '0';
 
                 if (req_i /= NONE_REQ) then
-                    if (unsigned(req_i) = floor_s) then
+                    if (unsigned(req_i) = ('0' & floor_s)) then
                         -- door_open_s <= '1';
                         next_state <= door_open_state;
-                    elsif (unsigned(req_i) > floor_s) then
+                    elsif (unsigned(req_i) > ('0' & floor_s)) then
                         -- mv_up_s    <= '1';
                         next_state <= go_up_state;
-                    elsif (unsigned(req_i) < floor_s) then
+                    elsif (unsigned(req_i) < ('0' & floor_s)) then
                         -- mv_down_s  <= '1';
                         next_state <= go_down_state;
                     end if;
@@ -156,18 +156,13 @@ begin
                     floor_counter_enable <= '1';
                     add_or_sub_s         <= '1';
 
-                    if (unsigned(req_i) < floor_s) then
-                        -- mv_up_s    <= '0';
-                        -- mv_down_s  <= '1';
+                    if (unsigned(req_i) < ('0' & floor_s)) then
                         next_state <= go_down_state;
                     end if;
                 end if;
 
                 -- TODO : it will the resolver duty to ensure that no req changes on the edges 
-                if (unsigned(req_i) = floor_s) then
-                    -- timer_reset <= '0';
-                    -- door_open_s <= '1';
-                    -- mv_up_s     <= '0';
+                if (unsigned(req_i) = ('0' & floor_s)) then
                     next_state <= door_open_state;
                 end if;
 
@@ -181,7 +176,7 @@ begin
                     floor_counter_enable <= '1';
                     add_or_sub_s         <= '0';
 
-                    if (unsigned(req_i) > floor_s) then
+                    if (unsigned(req_i) > (('0' & floor_s))) then
                         -- mv_up_s    <= '1';
                         -- mv_down_s  <= '0';
                         next_state <= go_up_state;
@@ -189,7 +184,7 @@ begin
                     end if;
                 end if;
 
-                if (unsigned(req_i) = floor_s) then
+                if (unsigned(req_i) = (('0' & floor_s))) then
 
                     -- door_open_s <= '1';
                     -- mv_down_s   <= '0';

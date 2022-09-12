@@ -24,7 +24,7 @@ architecture bench of resolver_fsm_tb is
             mv_down   : in  std_logic;
             door_open : in  std_logic;
             floor     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-            req       : out std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0)
+            req       : out std_logic_vector(integer(ceil(log2(real(N)))) downto 0)
         );
     end component;
 
@@ -36,7 +36,7 @@ architecture bench of resolver_fsm_tb is
         port(
             clk       : in  std_logic;
             reset_n   : in  std_logic;
-            req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+            req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
             mv_up     : out std_logic;
             mv_down   : out std_logic;
             door_open : out std_logic;
@@ -64,7 +64,7 @@ architecture bench of resolver_fsm_tb is
     signal mv_down   : std_logic;
     signal door_open : std_logic;
     signal floor_s   : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal req       : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal req       : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
 
     type state_type is (preparing_state, not_working_state, go_up_state, go_down_state, door_open_state);
     alias state_out is << signal .resolver_fsm_tb.elevator_ctrl_inst.current_state : state_type >>;
@@ -155,6 +155,6 @@ begin
         assert mv_up = '0' report "At Time: " & time'image(now) & " ,mv_up should have stayed 0" severity error;
         assert mv_down = '0' report "At Time: " & time'image(now) & " ,mv_down should have stayed 0" severity error;
         assert state_out = not_working_state report "At Time: " & time'image(now) & " ,state should have stayed not_working_state but was found " & to_string(state_out) severity error;
-        stop;
+        wait;
     end process;                        -- p1
 end;

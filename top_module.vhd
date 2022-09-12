@@ -37,7 +37,7 @@ architecture bench of top_module is
             mv_down   : in  std_logic;
             door_open : in  std_logic;
             floor     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-            req       : out std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0)
+            req       : out std_logic_vector(integer(ceil(log2(real(N)))) downto 0)
         );
     end component;
 
@@ -49,7 +49,7 @@ architecture bench of top_module is
         port(
             clk       : in  std_logic;
             reset_n   : in  std_logic;
-            req_i     : in  std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+            req_i     : in  std_logic_vector(integer(ceil(log2(real(N))))  downto 0);
             mv_up     : out std_logic;
             mv_down   : out std_logic;
             door_open : out std_logic;
@@ -67,7 +67,7 @@ architecture bench of top_module is
     signal mv_down_s   : std_logic;
     signal door_open_s : std_logic;
     signal floor_s     : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal req_s       : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal req_s       : std_logic_vector(integer(ceil(log2(real(N))))  downto 0);
 
 begin
 

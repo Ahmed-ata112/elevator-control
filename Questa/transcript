@@ -401,3 +401,783 @@ run
 # ** Note: BLOCK 4, CHECK time is 18010 ns
 #    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
 # Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 158
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0
+run
+# ** Note: 100
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+force -freeze sim:/resolver_fsm_tb/buttons 4'hF 0
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 25520 ns
+#    Time: 25520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 25520 ns ,door should be open but was found closed
+#    Time: 25520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 28020 ns
+#    Time: 28020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 28020 ns ,foor should have stayed OPEN
+#    Time: 28020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 32020 ns
+#    Time: 32020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(88): (vopt-1550) Port 'req' of component 'work.resolver_fsm_tb(bench).resolver_fsm' and port 'req' of entity 'work.resolver_fsm' have different sizes:  ([2,3]).
+#         Region: /resolver_fsm_tb/resolver_fsm_inst
+# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(99): (vopt-1550) Port 'req_i' of component 'work.resolver_fsm_tb(bench).elevator_ctrl' and port 'req_i' of entity 'work.elevator_ctrl' have different sizes:  ([2,3]).
+#         Region: /resolver_fsm_tb/elevator_ctrl_inst
+# Optimization failed
+# ** Warning: (vopt-31) Unable to unlink file "D:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa/work/@_opt/_lib3_0.qpg".
+# ** Warning: (vopt-31) Unable to unlink file "D:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa/work/@_opt/_lib3_0.qtl".
+# The process cannot access the file because it is being used by another process. (GetLastError() = 32)
+# ** Warning: (vopt-133) Unable to remove directory "D:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa/work/@_opt".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=3.
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+# A time value could not be extracted from the current line
+vsim work.resolver_fsm_tb
+# vsim work.resolver_fsm_tb 
+# Start time: 19:03:22 on Sep 12,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(88): (vopt-1550) Port 'req' of component 'work.resolver_fsm_tb(bench).resolver_fsm' and port 'req' of entity 'work.resolver_fsm' have different sizes:  ([2,3]).
+#         Region: /resolver_fsm_tb/resolver_fsm_inst
+# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(99): (vopt-1550) Port 'req_i' of component 'work.resolver_fsm_tb(bench).elevator_ctrl' and port 'req_i' of entity 'work.elevator_ctrl' have different sizes:  ([2,3]).
+#         Region: /resolver_fsm_tb/elevator_ctrl_inst
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=4, Warnings=3.
+# Error loading design
+# End time: 19:56:11 on Sep 12,2022, Elapsed time: 0:52:49
+# Errors: 4, Warnings: 4
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.resolver_fsm_tb
+# vsim work.resolver_fsm_tb 
+# Start time: 19:58:53 on Sep 12,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Error: (vopt-7) Failed to open  file "D:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa/work/@_opt/_deps" in read mode.
+# File exists. (errno = EEXIST)
+# ** Warning: (vopt-56) Problem with optimized design dependency file "D:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa/work/@_opt/_deps" - file open failed.
+# No such file or directory. (errno = ENOENT)
+# ** Fatal: (vopt-8) Problem while reading dependency file "_deps".
+# No such file or directory. (errno = ENOENT)
+# Vopt Compiler exiting
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=2, Warnings=1.
+# Error loading design
+# End time: 19:58:54 on Sep 12,2022, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 3
+# A time value could not be extracted from the current line
+vsim work.resolver_fsm_tb
+# vsim work.resolver_fsm_tb 
+# Start time: 19:59:01 on Sep 12,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 34004
+#           Attempting to use alternate WLF file "./wlftv86rig".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftv86rig
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+add wave -position 3  sim:/resolver_fsm_tb/floor_s
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 158
+run
+# ** Note: 100
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/ups 4'hF 0
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 30
+run
+run
+# ** Note: BLOCK 1, CHECK time is 25520 ns
+#    Time: 25520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 25520 ns ,door should be open but was found closed
+#    Time: 25520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 28020 ns
+#    Time: 28020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 28020 ns ,foor should have stayed OPEN
+#    Time: 28020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 32020 ns
+#    Time: 32020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 36020 ns
+#    Time: 36020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 158
+run
+# ** Note: 100
+#    Time: 36020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 43530 ns
+#    Time: 43530 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 43530 ns ,door should be open but was found closed
+#    Time: 43530 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 46030 ns
+#    Time: 46030 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 46030 ns ,foor should have stayed OPEN
+#    Time: 46030 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+vsim work.resolver_fsm_tb
+# End time: 20:06:52 on Sep 12,2022, Elapsed time: 0:07:51
+# Errors: 4, Warnings: 9
+# vsim work.resolver_fsm_tb 
+# Start time: 20:06:52 on Sep 12,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+do wave1.do
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 34004
+#           Attempting to use alternate WLF file "./wlftf1ithd".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftf1ithd
+# ** UI-Msg: (vish-4014) No objects found matching '/resolver_fsm_tb/floor'.
+# Executing ONERROR command at macro ./wave1.do line 8
+add wave -position 2  sim:/resolver_fsm_tb/floor_s
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h1 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position 22  sim:/resolver_fsm_tb/elevator_ctrl_inst/floor_s
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5065 ns  Iteration: 1  Instance: /resolver_fsm_tb/elevator_ctrl_inst/floor_counter_inst
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h1 0 -cancel 20
+run
+run
+run
+run
+run
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/add_or_sub_s
+add wave -position 28  sim:/resolver_fsm_tb/elevator_ctrl_inst/floor
+add wave -position 29  sim:/resolver_fsm_tb/elevator_ctrl_inst/floor_s
+add wave -position 28  sim:/resolver_fsm_tb/elevator_ctrl_inst/roll_s
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/counter
+run
+run
+run
+run
+# Causality operation skipped due to absence of debug database file
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5065 ns  Iteration: 1  Instance: /resolver_fsm_tb/elevator_ctrl_inst/floor_counter_inst
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h1 0 -cancel 20
+run
+run
+run
+run
+run
+run
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/floor_counter_inst/value
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/floor_counter_inst/Q
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/floor_counter_inst/n
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_UNSIGNED: vector truncated
+#    Time: 5065 ns  Iteration: 1  Instance: /resolver_fsm_tb/elevator_ctrl_inst/floor_counter_inst
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h1 0 -cancel 20
+run
+run
+run
+run
+run
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 15 ns  Iteration: 2  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h7 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/resolver_fsm_tb/buttons 4'h1 0 -cancel 20
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

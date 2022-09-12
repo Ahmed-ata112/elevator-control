@@ -26,15 +26,20 @@ begin
         elsif (rising_edge(clock)) then
 
             if clk_enable = '1' then
-                if (value = to_unsigned(k, value'length) - 1) then
-                    value <= (others => '0');
-                else
-                    if (add_or_sub = '1') then
+                if (add_or_sub = '1') then
+                    if (value = to_unsigned(k, value'length) - 1) then
+                        value <= value;
+                    else
                         value <= value + 1;
+                    end if;
+
+                else
+                    if value = to_unsigned(0, value'length) then
+                        value <= value;
                     else
                         value <= value - 1;
-
                     end if;
+
                 end if;
             end if;
 
