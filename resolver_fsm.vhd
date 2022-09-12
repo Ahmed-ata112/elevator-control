@@ -25,25 +25,24 @@ architecture rtl of resolver_fsm is
     type state_type is (none_state, upping_state, downing_state, reached_a_floor);
     signal current_state : state_type;
     signal next_state    : state_type;
+    constant NONE_REQ    : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
 
     type came_from_type is (none, up, down);
     signal came_from_s : came_from_type;
     signal came_from_r : came_from_type;
 
     signal none_is_pressed_s : std_logic;
-    signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
+    signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0) := unsigned(NONE_REQ);
+    signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0) := unsigned(NONE_REQ);
     signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal ups_s             : std_logic_vector(N - 1 downto 0) := (others => '1');
-    signal downs_s           : std_logic_vector(N - 1 downto 0) := (others => '1');
-    signal buttons_s         : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal ups_s             : std_logic_vector(N - 1 downto 0)                    := (others => '1');
+    signal downs_s           : std_logic_vector(N - 1 downto 0)                    := (others => '1');
+    signal buttons_s         : std_logic_vector(N - 1 downto 0)                    := (others => '1');
 
     signal req_r     : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal ups_r     : std_logic_vector(N - 1 downto 0) := (others => '1');
     signal downs_r   : std_logic_vector(N - 1 downto 0) := (others => '1');
     signal buttons_r : std_logic_vector(N - 1 downto 0) := (others => '1');
-
-    constant NONE_REQ : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) := (others => '1');
 
     component resolver_comb
         generic(
@@ -51,6 +50,7 @@ architecture rtl of resolver_fsm is
         );
         port(
             clk             : in  std_logic;
+            reset_n         : in  std_logic;
             ups             : in  std_logic_vector(N - 1 downto 0);
             downs           : in  std_logic_vector(N - 1 downto 0);
             buttons         : in  std_logic_vector(N - 1 downto 0);
@@ -95,14 +95,14 @@ begin
                 req_s <= NONE_REQ;      -- NONE VALUE FOR REQ 
 
                 -- when something is pressed and the door is closed
-                if (none_is_pressed_s = '0' and door_open = '0') then
+                if (none_is_pressed_s = '0' and door_open = '0' and highest_dest_s /= unsigned(NONE_REQ)) then
                     if (highest_dest_s > unsigned(floor)) then
                         next_state <= upping_state;
                     elsif (lowest_dest_s < unsigned(floor)) then
                         next_state <= downing_state;
-                    else 
+                    else
                         next_state <= reached_a_floor;
-                        end if;
+                    end if;
                 end if;
 
             when upping_state =>
@@ -137,7 +137,7 @@ begin
                 req_s <= floor;
                 -- wait untill he opens the door then change the req to an appropriate value OR go to none_state
                 if (door_open = '1') then
-                    if (came_from_r = up) then  
+                    if (came_from_r = up) then
                         next_state <= upping_state;
                     elsif (came_from_r = down) then
                         next_state <= downing_state;
@@ -155,6 +155,7 @@ begin
         )
         port map(
             clk             => clk,
+            reset_n         => reset_n,
             ups             => ups_r,
             downs           => downs_r,
             buttons         => buttons_r,

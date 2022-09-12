@@ -12,8 +12,6 @@ entity top_module is
     port(
         clk       : in  std_logic;
         reset_n   : in  std_logic;
-        ups       : in  std_logic_vector(N - 1 downto 0);
-        downs     : in  std_logic_vector(N - 1 downto 0);
         bn        : in  std_logic_vector(N - 1 downto 0);
         mv_up     : out std_logic;
         mv_dn     : out std_logic;
@@ -80,8 +78,8 @@ begin
         port map(
             clk       => clk,
             reset_n   => reset_n,
-            ups       => ups,
-            downs     => downs,
+            ups       => (others => '1'),
+            downs     => (others => '1'),
             buttons   => bn,
             mv_up     => mv_up_s,
             mv_down   => mv_down_s,

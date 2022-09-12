@@ -14,6 +14,7 @@ entity one_sec_timer is
     );
 end entity;
 architecture rtl of one_sec_timer is
+
     signal fast_count        : unsigned(31 downto 0) := (others => '0');
     signal slow_count_signal : unsigned(3 downto 0)  := (others => '0');
 begin

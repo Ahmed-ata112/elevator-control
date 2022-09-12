@@ -45,9 +45,11 @@ architecture bench of resolver_fsm_tb is
     end component;
 
     -- Clock period
-    constant clk_period : time    := 10 ns;
+    constant clk_period : time    := 20 ns;
+    constant clk_freq   : integer := 1 / integer(clk_period);
+
     -- Generics
-    constant N          : integer := 10;
+    constant N : integer := 10;
 
     -- Ports
     signal clk       : std_logic;
@@ -83,7 +85,7 @@ begin
     elevator_ctrl_inst : component elevator_ctrl
         generic map(
             N        => N,
-            clk_freq => 20
+            clk_freq => 50_000_000
         )
         port map(
             clk       => clk,
@@ -105,6 +107,7 @@ begin
 
     p1 : process
     begin
+        report to_string(clk_freq);
         reset_n <= '0';
         ups     <= (others => '1');
         downs   <= (others => '1');
@@ -112,6 +115,7 @@ begin
         wait for clk_period;
         reset_n <= '1';
         wait for clk_period;
+
         wait;
     end process;                        -- p1
 end;
