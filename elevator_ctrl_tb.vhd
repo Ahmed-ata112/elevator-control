@@ -203,8 +203,12 @@ begin
         assert_floor_and_door(floor_s, door_open, x"2", '0');
         reset_n <= '1';
 
-        wait for clk_period * clk_freq * 10;
+        wait for clk_period * clk_freq * 10.5;
         report "BLOCK 14, CHECK time is " & time'image(now);
+        assert_floor_and_door(floor_s, door_open, x"7", '1');
+
+        wait for clk_period * clk_freq * 2; -- so the door closes
+        report "BLOCK 15, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"7", '0');
 
         wait for clk_period * clk_freq * 6;

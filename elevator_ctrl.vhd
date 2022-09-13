@@ -75,7 +75,12 @@ begin
         if (rising_edge(clk)) then
             if (reset_n = '0') then
                 --  i should put all the values in the state itself to avoid any multiple drivers
-                current_state <= preparing_state; -- it goes to the ground floor
+                if (mv_up_s = '1' or mv_down_s = '1') then
+                    current_state <= preparing_state; -- it goes to the ground floor
+                else
+                    current_state <= not_working_state; -- it goes to the ground floor
+
+                end if;
             else
                 current_state <= next_state;
 
@@ -87,7 +92,7 @@ begin
         end if;
     end process;
 
-    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, counter, req_i, floor_s, mv_up_s, mv_down_s, roll_s)
+    state_transitions_process : process(door_open_r, current_state, mv_up_r, mv_down_r, req_i, floor_s, roll_s)
     begin
         --default values
         mv_up_s              <= mv_up_r;
@@ -100,23 +105,24 @@ begin
         case current_state is
 
             when preparing_state =>
+
+                -- we are in a safe place now
+                -- timer_reset <= '0';
+
                 -- it should stay here untill a valid  floor is reached
                 -- it won't listen to the resolver until then
-
-                if counter = to_unsigned(0, 4) then
-                    -- we are in a safe place now
-                    -- timer_reset <= '0';
+                if roll_s = '1' then
                     next_state <= not_working_state;
-
-                elsif roll_s = '1' then
-                    if mv_up_s = '1' then
+                    if mv_up_r = '1' then
                         --add the floor
                         floor_counter_enable <= '1';
                         add_or_sub_s         <= '1';
-                    elsif mv_down_s = '1' then
+                        mv_up_s              <= '0';
+                    elsif mv_down_r = '1' then
                         -- decrease the floor
                         floor_counter_enable <= '1';
                         add_or_sub_s         <= '0';
+                        mv_down_s            <= '0';
                     end if;
                 end if;
 
