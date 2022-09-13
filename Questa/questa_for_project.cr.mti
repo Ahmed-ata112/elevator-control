@@ -1,14 +1,4 @@
-{D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package MATH_REAL
--- Compiling entity elevator_ctrl
--- Compiling architecture rtl of elevator_ctrl
-
-} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd}
+{D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -17,6 +7,68 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package MATH_REAL
 -- Compiling entity resolver_comb
 -- Compiling architecture arch of resolver_comb
+
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd}} {1 {vcom -work work -2002 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2002 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity resolver_comb
+-- Compiling architecture arch of resolver_comb
+End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
+
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd}} {1 {vcom -work work -2008 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2008 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Loading package testbench_pack
+-- Loading package ENV
+-- Compiling entity resolver_fsm_tb
+-- Compiling architecture bench of resolver_fsm_tb
+End time: 15:21:14 on Sep 13,2022, Elapsed time: 0:00:01
+
+} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity one_sec_timer
+-- Compiling architecture rtl of one_sec_timer
+
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd}} {1 {vcom -work work -2002 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2002 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity one_sec_timer
+-- Compiling architecture rtl of one_sec_timer
+End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
+
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd}} {1 {vcom -work work -2008 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2008 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package testbench_pack
+-- Compiling package body testbench_pack
+-- Loading package testbench_pack
+End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
 
 } {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
@@ -28,14 +80,63 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling entity resolver_fsm
 -- Compiling architecture rtl of resolver_fsm
 
-} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd}
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd}} {1 {vcom -work work -2002 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2002 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity resolver_fsm
+-- Compiling architecture rtl of resolver_fsm
+End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
+
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd}} {1 {vcom -work work -2008 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2008 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity floor_counter
+-- Compiling architecture Behavior of floor_counter
+End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
+
+} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity one_sec_timer
--- Compiling architecture rtl of one_sec_timer
+-- Loading package MATH_REAL
+-- Compiling entity elevator_ctrl
+-- Compiling architecture rtl of elevator_ctrl
+
+} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd} {1 {vcom -work work -2008 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package testbench_pack
+-- Compiling package body testbench_pack
+-- Loading package testbench_pack
+
+} {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}} {1 {vcom -work work -2002 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+Start time: 15:21:13 on Sep 13,2022
+vcom -reportprogress 300 -work work -2002 -explicit -vopt D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity elevator_ctrl
+-- Compiling architecture rtl of elevator_ctrl
+End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
 
 } {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd} {1 {vcom -work work -2008 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
