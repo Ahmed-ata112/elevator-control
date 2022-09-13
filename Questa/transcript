@@ -877,3 +877,622 @@ run -all
 # ** Note: BLOCK 10, CHECK time is 63510 ns
 #    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
 # Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 202
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+run -all
+# ** Note: 100
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 1, CHECK time is 81020 ns
+#    Time: 81020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 83520 ns
+#    Time: 83520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 87520 ns
+#    Time: 87520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 91520 ns
+#    Time: 91520 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 97020 ns
+#    Time: 97020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 107020 ns
+#    Time: 107020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 111020 ns
+#    Time: 111020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 117020 ns
+#    Time: 117020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 133020 ns
+#    Time: 133020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 137020 ns
+#    Time: 137020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 147020 ns
+#    Time: 147020 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 80510 ns ,floor should be 2 but was found 1
+#    Time: 80510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 90510 ns ,floor should be 7 but was found 5
+#    Time: 90510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+add wave -position 4  sim:/resolver_fsm_tb/floor_s
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 80510 ns ,floor should be 2 but was found 1
+#    Time: 80510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 90510 ns ,floor should be 7 but was found 5
+#    Time: 90510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 205
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 12, CHECK time is 75010 ns
+#    Time: 75010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 13, CHECK time is 81010 ns
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 81010 ns ,floor should be 2 but was found 1
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 14, CHECK time is 91010 ns
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 91010 ns ,floor should be 7 but was found 5
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 211
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/counter
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 12, CHECK time is 75010 ns
+#    Time: 75010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 13, CHECK time is 81010 ns
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 81010 ns ,floor should be 2 but was found 1
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 14, CHECK time is 91010 ns
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 91010 ns ,floor should be 7 but was found 5
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 211
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 12, CHECK time is 75010 ns
+#    Time: 75010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 13, CHECK time is 81010 ns
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 81010 ns ,floor should be 2 but was found 1
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 14, CHECK time is 91010 ns
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 91010 ns ,floor should be 7 but was found 5
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 211
+add wave -position end  sim:/resolver_fsm_tb/elevator_ctrl_inst/next_state
+# Compile of testbench_pack.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run -all
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 5, CHECK time is 23510 ns
+#    Time: 23510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 6, CHECK time is 33510 ns
+#    Time: 33510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 7, CHECK time is 37510 ns
+#    Time: 37510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 8, CHECK time is 43510 ns
+#    Time: 43510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 9, CHECK time is 59510 ns
+#    Time: 59510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 10, CHECK time is 63510 ns
+#    Time: 63510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 11, CHECK time is 73510 ns
+#    Time: 73510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 12, CHECK time is 75010 ns
+#    Time: 75010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 13, CHECK time is 81010 ns
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 81010 ns ,floor should be 2 but was found 1
+#    Time: 81010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 14, CHECK time is 91010 ns
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Error: At Time: 91010 ns ,floor should be 7 but was found 5
+#    Time: 91010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 211

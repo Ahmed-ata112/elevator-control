@@ -76,9 +76,6 @@ begin
             if (reset_n = '0') then
                 --  i should put all the values in the state itself to avoid any multiple drivers
                 current_state <= preparing_state; -- it goes to the ground floor
-                mv_up_r       <= '0';
-                mv_down_r     <= '0';
-                door_open_r   <= '0';
             else
                 current_state <= next_state;
 

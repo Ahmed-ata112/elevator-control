@@ -48,7 +48,7 @@ architecture bench of resolver_fsm_tb is
     end component;
 
     -- Clock period
-    -- 1 ms => 1 sec in real time
+    -- 10 ns => 1 sec in real time
     constant clk_period : time    := 10 ns;
     constant clk_freq   : integer := 100;
     -- constant clk_period : time    := 20 ns;
@@ -121,52 +121,43 @@ begin
         ups     <= (others => '1');
         downs   <= (others => '1');
         buttons <= (others => '1');
+
         wait for clk_period;
         -- this happens at the falling edge of the clock
         reset_n <= '1';
         wait for clk_period * clk_freq * 3; --simulates a 3 sec
-
-        ups <= (2 => '0', others => '1'); -- request floor 2
-
+        ups     <= (2 => '0', others => '1'); -- request floor 2
         --run for 4.5 Seconds
         wait for clk_period * clk_freq * 4.5;
         report "BLOCK 1, CHECK time is " & time'image(now);
-
         assert_floor_and_door(floor_s, door_open, x"2", '1');
 
         wait for clk_period * clk_freq * 2.5;
         -- the ups are still pressed so it stayed at floor 2 
         report "BLOCK 2, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"2", '1');
-
         ups <= (others => '1');         -- clear the buttons
-
         wait for clk_period * clk_freq * 4;
         report "BLOCK 3, CHECK time is " & time'image(now);
-
         assert_floor_and_door(floor_s, door_open, x"2", '0');
-
         ups <= (others => '1');         -- clear requests
 
         wait for clk_period * clk_freq * 4; -- wait in the not working state for a couple of seconds
-
         report "BLOCK 4, CHECK time is " & time'image(now);
-
         assert_floor_and_door(floor_s, door_open, x"2", '0');
-
         assert mv_up = '0' report "At Time: " & time'image(now) & " ,mv_up should have stayed 0" severity error;
         assert mv_down = '0' report "At Time: " & time'image(now) & " ,mv_down should have stayed 0" severity error;
         assert state_out = not_working_state report "At Time: " & time'image(now) & " ,state should have stayed not_working_state but was found " & to_string(state_out) severity error;
 
         wait for clk_period * clk_freq; -- after 1 second
         ups <= (4 => '0', 8 => '0', others => '1'); -- pressed floor 4 and 8
+
         wait for clk_period * clk_freq; -- after 1 seconds
         ups <= (others => '1');         -- release all ups
-        wait for clk_period * clk_freq * 3.5; -- after 4.5 seconds , it should have reached the 4th floor and opend the door
 
+        wait for clk_period * clk_freq * 3.5; -- after 4.5 seconds , it should have reached the 4th floor and opend the door
         report "BLOCK 5, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"4", '1');
-
         buttons <= (9 => '0', 0 => '0', others => '1'); -- pressed the buttons and request floor 9 and 0 
 
         -- NOTE: IT WONT change its direction until it reaches the 9th floor
@@ -178,7 +169,6 @@ begin
         wait for clk_period * clk_freq * 4; -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
         report "BLOCK 7, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"9", '1');
-
         -- TEST: gowing down with buttons pressed 
         ups   <= (1 => '0', others => '1');
         downs <= (7 => '0', others => '1');
@@ -198,21 +188,50 @@ begin
         wait for clk_period * clk_freq * 4; -- changed direction and went to the floor 1  and opened its Door
         report "BLOCK 10, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"1", '1');
-        wait for clk_period * clk_freq * 1;
+        wait for clk_period * clk_freq * 10; -- 5 SECs
+
+        report "BLOCK 11, CHECK time is " & time'image(now);
+        downs <= (7 => '0', others => '1');
+
+        wait for clk_period * clk_freq * 1.5;
+        report "BLOCK 12, CHECK time is " & time'image(now);
+        downs   <= (others => '1');
+        reset_n <= '0';
+
+        wait for clk_period * clk_freq * 6;
+        report "BLOCK 13, CHECK time is " & time'image(now);
+        assert_floor_and_door(floor_s, door_open, x"2", '0');
+        reset_n <= '1';
+
+        wait for clk_period * clk_freq * 10;
+        report "BLOCK 14, CHECK time is " & time'image(now);
+        assert_floor_and_door(floor_s, door_open, x"7", '0');
+
+        wait for clk_period * clk_freq * 6;
         stop;
     end process;                        -- p1
 
     floor_log_io : process
-        File floor_log_file : text open write_mode is "floorLog.txt";
-
+        File floor_log_file   : text open write_mode is "floorLog.txt";
+        alias ups_r is << signal .resolver_fsm_tb.resolver_fsm_inst.ups_r : std_logic_vector(N - 1 downto 0)  >>;
+        alias downs_r is << signal .resolver_fsm_tb.resolver_fsm_inst.downs_r : std_logic_vector(N - 1 downto 0)  >>;
+        alias buttons_r is << signal .resolver_fsm_tb.resolver_fsm_inst.buttons_r : std_logic_vector(N - 1 downto 0)  >>;
+        variable current_REGS : std_logic_vector(N - 1 downto 0);
     begin
         wait on floor_s;
-        if mv_up then
-            write(floor_log_file, "elevator is  moving up to floor " & to_hstring(floor_s) & LF);
-        elsif mv_down then
+        current_REGS := ups_r and downs_r and buttons_r;
+        write(floor_log_file, to_string(now, ns) & " : " & "combined requests are " & to_string(current_REGS) & LF);
+        write(floor_log_file, to_string(now, ns) & " : " & "ups requests are " & to_string(ups) & LF);
+        write(floor_log_file, to_string(now, ns) & " : " & "downs requests are " & to_string(downs) & LF);
+        write(floor_log_file, to_string(now, ns) & " : " & "buttons requests are " & to_string(buttons_r) & LF);
 
-            write(floor_log_file, "elevator is  moving down to floor " & to_hstring(floor_s) & LF);
+        if mv_up then
+            write(floor_log_file, "elevator is moving up to floor " & to_hstring(floor_s) & LF);
+        elsif mv_down then
+            write(floor_log_file, "elevator is moving down to floor " & to_hstring(floor_s) & LF);
         end if;
+
+        write(floor_log_file, "===================-------------===================" & LF);
 
     end process;                        -- floor_log_io
 end;
