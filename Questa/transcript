@@ -56,3 +56,39 @@ run -all
 # ** Note: BLOCK 4, CHECK time is 18010 ns
 #    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
 # Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 160
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# 6 compiles, 0 failed with no errors.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading std.env(body)
+# Loading work.resolver_fsm_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.elevator_ctrl(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/resolver_fsm_tb/elevator_ctrl_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+run
+# ** Note: 100
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Warning: NUMERIC_STD."=": metavalue detected, returning FALSE
+#    Time: 0 ns  Iteration: 0  Instance: /resolver_fsm_tb/elevator_ctrl_inst
+run -all
+# ** Note: BLOCK 1, CHECK time is 7510 ns
+#    Time: 7510 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 2, CHECK time is 10010 ns
+#    Time: 10010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 3, CHECK time is 14010 ns
+#    Time: 14010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# ** Note: BLOCK 4, CHECK time is 18010 ns
+#    Time: 18010 ns  Iteration: 0  Instance: /resolver_fsm_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 160

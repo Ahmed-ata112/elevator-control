@@ -34,15 +34,14 @@ architecture rtl of resolver_fsm is
     signal none_is_pressed_s : std_logic;
     signal highest_dest_s    : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal lowest_dest_s     : unsigned(integer(ceil(log2(real(N)))) - 1 downto 0);
-    signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
-    signal ups_s             : std_logic_vector(N - 1 downto 0) := (others => '1');
-    signal downs_s           : std_logic_vector(N - 1 downto 0) := (others => '1');
-    signal buttons_s         : std_logic_vector(N - 1 downto 0) := (others => '1');
-
-    signal req_r     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
-    signal ups_r     : std_logic_vector(N - 1 downto 0) := (others => '1');
-    signal downs_r   : std_logic_vector(N - 1 downto 0) := (others => '1');
-    signal buttons_r : std_logic_vector(N - 1 downto 0) := (others => '1');
+    signal req_s             : std_logic_vector(integer(ceil(log2(real(N)))) downto 0) := NONE_REQ;
+    signal ups_s             : std_logic_vector(N - 1 downto 0)                        := (others => '1');
+    signal downs_s           : std_logic_vector(N - 1 downto 0)                        := (others => '1');
+    signal buttons_s         : std_logic_vector(N - 1 downto 0)                        := (others => '1');
+    signal req_r             : std_logic_vector(integer(ceil(log2(real(N)))) downto 0) := NONE_REQ;
+    signal ups_r             : std_logic_vector(N - 1 downto 0)                        := (others => '1');
+    signal downs_r           : std_logic_vector(N - 1 downto 0)                        := (others => '1');
+    signal buttons_r         : std_logic_vector(N - 1 downto 0)                        := (others => '1');
 
     component resolver_comb
         generic(
