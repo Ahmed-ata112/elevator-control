@@ -126,7 +126,6 @@ begin
         ups <= (2 => '0', others => '1'); -- request floor 2
 
         --run for 4.5 Seconds
-        -- 
         wait for clk_period * clk_freq * 4.5;
         report "BLOCK 1, CHECK time is " & time'image(now);
 
@@ -137,7 +136,7 @@ begin
         -- the ups are still pressed so it stayed at floor 2 
         report "BLOCK 2, CHECK time is " & time'image(now);
         assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
-        assert door_open = '1' report "At Time: " & time'image(now) & " ,foor should have stayed OPEN" severity error;
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,foor should have been OPEN" severity error;
         ups <= (others => '1');         -- clear the buttons
 
         wait for clk_period * clk_freq * 4;
@@ -156,7 +155,53 @@ begin
         assert mv_down = '0' report "At Time: " & time'image(now) & " ,mv_down should have stayed 0" severity error;
         assert state_out = not_working_state report "At Time: " & time'image(now) & " ,state should have stayed not_working_state but was found " & to_string(state_out) severity error;
 
-        
+        wait for clk_period * clk_freq; -- after 1 second
+        ups <= (4 => '0', 8 => '0', others => '1'); -- pressed floor 4 and 8
+        wait for clk_period * clk_freq; -- after 1 seconds
+        ups <= (others => '1');         -- release all ups
+        wait for clk_period * clk_freq * 3.5; -- after 4.5 seconds , it should have reached the 4th floor and opend the door
+
+        report "BLOCK 5, CHECK time is " & time'image(now);
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,Door should have been OPEN" severity error;
+        assert floor_s = x"4" report "At Time: " & time'image(now) & " ,floor should be 4 but was found " & to_hstring(floor_s) severity error;
+        buttons <= (9 => '0', 0 => '0', others => '1'); -- pressed the buttons and request floor 9 and 0 
+
+        -- NOTE: IT WONT change its direction until it reaches the 9th floor
+        wait for clk_period * clk_freq * 10; -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
+        buttons <= (others => '1');
+        report "BLOCK 6, CHECK time is " & time'image(now);
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,Door should have been OPEN" severity error;
+        assert floor_s = x"8" report "At Time: " & time'image(now) & " ,floor should be 8 but was found " & to_hstring(floor_s) severity error;
+
+        wait for clk_period * clk_freq * 4; -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
+        report "BLOCK 7, CHECK time is " & time'image(now);
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,Door should have been OPEN" severity error;
+        assert floor_s = x"9" report "At Time: " & time'image(now) & " ,floor should be 9 but was found " & to_hstring(floor_s) severity error;
+
+        -- TEST: gowing down with buttons pressed 
+        ups   <= (1 => '0', others => '1');
+        downs <= (7 => '0', others => '1');
+
+        wait for clk_period * clk_freq * 1; -- pressed 1 sec
+        ups   <= (others => '1');
+        downs <= (others => '1');
+
+        wait for clk_period * clk_freq * 5;
+        report "BLOCK 8, CHECK time is " & time'image(now);
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,Door should have been OPEN" severity error;
+        assert floor_s = x"7" report "At Time: " & time'image(now) & " ,floor should be 7 but was found " & to_hstring(floor_s) severity error;
+
+        wait for clk_period * clk_freq * 16;
+        report "BLOCK 9, CHECK time is " & time'image(now);
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,Door should have been OPEN" severity error;
+        assert floor_s = x"0" report "At Time: " & time'image(now) & " ,floor should be 0 but was found " & to_hstring(floor_s) severity error;
+
+        wait for clk_period * clk_freq * 4; -- changed direction and went to the floor 1  and opened its Door
+        report "BLOCK 10, CHECK time is " & time'image(now);
+        assert door_open = '1' report "At Time: " & time'image(now) & " ,Door should have been OPEN" severity error;
+        assert floor_s = x"1" report "At Time: " & time'image(now) & " ,floor should be 1 but was found " & to_hstring(floor_s) severity error;
+
+        wait for clk_period * clk_freq * 1;
         stop;
     end process;                        -- p1
 end;
