@@ -125,7 +125,6 @@ begin
 
             when not_working_state =>
                 -- Put it into the output process
-                -- timer_reset <= '0';
                 mv_up_s     <= '0';
                 mv_down_s   <= '0';
                 door_open_s <= '0';
@@ -135,13 +134,10 @@ begin
 
                 if (req_i /= NONE_REQ) then
                     if (unsigned(req_i) = ('0' & floor_s)) then
-                        -- door_open_s <= '1';
                         next_state <= door_open_state;
                     elsif (unsigned(req_i) > ('0' & floor_s)) then
-                        -- mv_up_s    <= '1';
                         next_state <= go_up_state;
                     elsif (unsigned(req_i) < ('0' & floor_s)) then
-                        -- mv_down_s  <= '1';
                         next_state <= go_down_state;
                     end if;
                 end if;
@@ -185,10 +181,6 @@ begin
                 end if;
 
                 if (unsigned(req_i) = (('0' & floor_s))) then
-
-                    -- door_open_s <= '1';
-                    -- mv_down_s   <= '0';
-
                     next_state <= door_open_state;
                 end if;
 
@@ -198,8 +190,6 @@ begin
                 door_open_s <= '1';
                 -- we should stay here as long as the door is open then move to the not working
                 if roll_s = '1' then
-                    -- door_open_s <= '0';
-                    -- timer_reset <= '0';
                     next_state <= not_working_state;
 
                 end if;

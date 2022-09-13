@@ -52,7 +52,7 @@ architecture bench of resolver_fsm_tb is
     -- constant clk_freq   : integer := 50_000_000;
 
     -- Generics
-    constant N : integer := 4;
+    constant N : integer := 10;
 
     -- Ports
     signal clk       : std_logic;
@@ -130,31 +130,33 @@ begin
         wait for clk_period * clk_freq * 4.5;
         report "BLOCK 1, CHECK time is " & time'image(now);
 
-        -- assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
+        assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
         assert door_open = '1' report "At Time: " & time'image(now) & " ,door should be open but was found closed" severity error;
 
         wait for clk_period * clk_freq * 2.5;
         -- the ups are still pressed so it stayed at floor 2 
         report "BLOCK 2, CHECK time is " & time'image(now);
-        -- assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
+        assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
         assert door_open = '1' report "At Time: " & time'image(now) & " ,foor should have stayed OPEN" severity error;
         ups <= (others => '1');         -- clear the buttons
 
         wait for clk_period * clk_freq * 4;
         report "BLOCK 3, CHECK time is " & time'image(now);
 
-        -- assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
+        assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
         assert door_open = '0' report "At Time: " & time'image(now) & " ,Door should have stayed Closed" severity error;
         ups <= (others => '1');         -- clear requests
 
         wait for clk_period * clk_freq * 4; -- wait in the not working state for a couple of seconds
 
         report "BLOCK 4, CHECK time is " & time'image(now);
-        -- assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
+        assert floor_s = x"2" report "At Time: " & time'image(now) & " ,floor should be 2 but was found " & to_hstring(floor_s) severity error;
         assert door_open = '0' report "At Time: " & time'image(now) & " ,Door should have stayed Closed" severity error;
         assert mv_up = '0' report "At Time: " & time'image(now) & " ,mv_up should have stayed 0" severity error;
         assert mv_down = '0' report "At Time: " & time'image(now) & " ,mv_down should have stayed 0" severity error;
         assert state_out = not_working_state report "At Time: " & time'image(now) & " ,state should have stayed not_working_state but was found " & to_string(state_out) severity error;
-        wait;
+
+        
+        stop;
     end process;                        -- p1
 end;
