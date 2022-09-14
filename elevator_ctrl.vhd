@@ -20,7 +20,7 @@ entity elevator_ctrl is
 end entity;
 
 architecture rtl of elevator_ctrl is
-    type state_type is (preparing_state, not_working_state, go_up_state, go_down_state, door_open_state);
+    type state_type is (going_to_valid_place_state, not_working_state, go_up_state, go_down_state, door_open_state);
     signal current_state : state_type;
     signal next_state    : state_type;
 
@@ -74,7 +74,7 @@ begin
             if (reset_n = '0') then
                 --  i should put all the values in the state itself to avoid any multiple drivers
                 if (mv_up_s = '1' or mv_down_s = '1' or door_open_s = '1') then
-                    current_state <= preparing_state; -- it goes to the ground floor
+                    current_state <= going_to_valid_place_state; -- it goes to the ground floor
                 else
                     current_state <= not_working_state; -- it goes to the ground floor
                     mv_up_r       <= '0';
@@ -104,7 +104,7 @@ begin
         add_or_sub_s         <= '0';
         case current_state is
 
-            when preparing_state =>
+            when going_to_valid_place_state =>
 
                 -- we are in a safe place now
                 -- timer_reset <= '0';

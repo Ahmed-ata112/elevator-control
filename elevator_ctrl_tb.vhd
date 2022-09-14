@@ -69,7 +69,7 @@ architecture bench of resolver_fsm_tb is
     signal floor_s   : std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0);
     signal req_s     : std_logic_vector(integer(ceil(log2(real(N)))) downto 0);
 
-    type state_type is (preparing_state, not_working_state, go_up_state, go_down_state, door_open_state);
+    type state_type is (going_to_valid_place_state, not_working_state, go_up_state, go_down_state, door_open_state);
     alias state_out is << signal .resolver_fsm_tb.elevator_ctrl_inst.current_state : state_type >>;
 
 begin
