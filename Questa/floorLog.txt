@@ -1,0 +1,154 @@
+0 ns : combined requests are 1111111111
+0 ns : ups requests are 1111111111
+0 ns : downs requests are 1111111111
+0 ns : buttons requests are 1111111111
+===================-------------===================
+40052 ns : combined requests are 1111111011
+40052 ns : ups requests are 1111111011
+40052 ns : downs requests are 1111111111
+40052 ns : buttons requests are 1111111111
+elevator is moving up to floor 1
+===================-------------===================
+56052 ns : combined requests are 1111111011
+56052 ns : ups requests are 1111111011
+56052 ns : downs requests are 1111111111
+56052 ns : buttons requests are 1111111111
+elevator is moving up to floor 2
+===================-------------===================
+168052 ns : combined requests are 1011101111
+168052 ns : ups requests are 1111111111
+168052 ns : downs requests are 1111111111
+168052 ns : buttons requests are 1111111111
+elevator is moving up to floor 3
+===================-------------===================
+184052 ns : combined requests are 1011101111
+184052 ns : ups requests are 1111111111
+184052 ns : downs requests are 1111111111
+184052 ns : buttons requests are 1111111111
+elevator is moving up to floor 4
+===================-------------===================
+216068 ns : combined requests are 0011111110
+216068 ns : ups requests are 1111111111
+216068 ns : downs requests are 1111111111
+216068 ns : buttons requests are 0111111110
+elevator is moving up to floor 5
+===================-------------===================
+232068 ns : combined requests are 0011111110
+232068 ns : ups requests are 1111111111
+232068 ns : downs requests are 1111111111
+232068 ns : buttons requests are 0111111110
+elevator is moving up to floor 6
+===================-------------===================
+248068 ns : combined requests are 0011111110
+248068 ns : ups requests are 1111111111
+248068 ns : downs requests are 1111111111
+248068 ns : buttons requests are 0111111110
+elevator is moving up to floor 7
+===================-------------===================
+264068 ns : combined requests are 0011111110
+264068 ns : ups requests are 1111111111
+264068 ns : downs requests are 1111111111
+264068 ns : buttons requests are 0111111110
+elevator is moving up to floor 8
+===================-------------===================
+296084 ns : combined requests are 0111111110
+296084 ns : ups requests are 1111111111
+296084 ns : downs requests are 1111111111
+296084 ns : buttons requests are 0111111110
+elevator is moving up to floor 9
+===================-------------===================
+328124 ns : combined requests are 1101111100
+328124 ns : ups requests are 1111111111
+328124 ns : downs requests are 1111111111
+328124 ns : buttons requests are 1111111110
+elevator is moving down to floor 8
+===================-------------===================
+344124 ns : combined requests are 1101111100
+344124 ns : ups requests are 1111111111
+344124 ns : downs requests are 1111111111
+344124 ns : buttons requests are 1111111110
+elevator is moving down to floor 7
+===================-------------===================
+376140 ns : combined requests are 1111111100
+376140 ns : ups requests are 1111111111
+376140 ns : downs requests are 1111111111
+376140 ns : buttons requests are 1111111110
+elevator is moving down to floor 6
+===================-------------===================
+392140 ns : combined requests are 1111111100
+392140 ns : ups requests are 1111111111
+392140 ns : downs requests are 1111111111
+392140 ns : buttons requests are 1111111110
+elevator is moving down to floor 5
+===================-------------===================
+408140 ns : combined requests are 1111111100
+408140 ns : ups requests are 1111111111
+408140 ns : downs requests are 1111111111
+408140 ns : buttons requests are 1111111110
+elevator is moving down to floor 4
+===================-------------===================
+424140 ns : combined requests are 1111111100
+424140 ns : ups requests are 1111111111
+424140 ns : downs requests are 1111111111
+424140 ns : buttons requests are 1111111110
+elevator is moving down to floor 3
+===================-------------===================
+440140 ns : combined requests are 1111111100
+440140 ns : ups requests are 1111111111
+440140 ns : downs requests are 1111111111
+440140 ns : buttons requests are 1111111110
+elevator is moving down to floor 2
+===================-------------===================
+456140 ns : combined requests are 1111111100
+456140 ns : ups requests are 1111111111
+456140 ns : downs requests are 1111111111
+456140 ns : buttons requests are 1111111110
+elevator is moving down to floor 1
+===================-------------===================
+472140 ns : combined requests are 1111111100
+472140 ns : ups requests are 1111111111
+472140 ns : downs requests are 1111111111
+472140 ns : buttons requests are 1111111110
+elevator is moving down to floor 0
+===================-------------===================
+504180 ns : combined requests are 1111111101
+504180 ns : ups requests are 1111111111
+504180 ns : downs requests are 1111111111
+504180 ns : buttons requests are 1111111111
+elevator is moving up to floor 1
+===================-------------===================
+604052 ns : combined requests are 1111111111
+604052 ns : ups requests are 1111111111
+604052 ns : downs requests are 1111111111
+604052 ns : buttons requests are 1111111111
+===================-------------===================
+748052 ns : combined requests are 1101111111
+748052 ns : ups requests are 1111111111
+748052 ns : downs requests are 1111111111
+748052 ns : buttons requests are 1111111111
+elevator is moving up to floor 3
+===================-------------===================
+764052 ns : combined requests are 1101111111
+764052 ns : ups requests are 1111111111
+764052 ns : downs requests are 1111111111
+764052 ns : buttons requests are 1111111111
+elevator is moving up to floor 4
+===================-------------===================
+780052 ns : combined requests are 1101111111
+780052 ns : ups requests are 1111111111
+780052 ns : downs requests are 1111111111
+780052 ns : buttons requests are 1111111111
+elevator is moving up to floor 5
+===================-------------===================
+796052 ns : combined requests are 1101111111
+796052 ns : ups requests are 1111111111
+796052 ns : downs requests are 1111111111
+796052 ns : buttons requests are 1111111111
+elevator is moving up to floor 6
+===================-------------===================
+812052 ns : combined requests are 1101111111
+812052 ns : ups requests are 1111111111
+812052 ns : downs requests are 1111111111
+812052 ns : buttons requests are 1111111111
+elevator is moving up to floor 7
+===================-------------===================
