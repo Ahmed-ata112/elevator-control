@@ -1071,3 +1071,5 @@ run -all
 # ** Note: BLOCK 15, CHECK time is 816008 ns
 #    Time: 816008 ns  Iteration: 0  Instance: /resolver_fsm_tb
 # Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 224
+# End time: 13:52:03 on Sep 14,2022, Elapsed time: 1:34:05
+# Errors: 0, Warnings: 2
