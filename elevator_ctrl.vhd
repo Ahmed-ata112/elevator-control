@@ -28,8 +28,7 @@ architecture rtl of elevator_ctrl is
     signal timer_reset          : std_logic;
     signal floor_counter_enable : std_logic;
     signal roll_s               : std_logic;
-    signal add_or_sub_s         : std_logic            := ('0');
-    signal counter              : unsigned(3 downto 0) := (others => '0');
+    signal add_or_sub_s         : std_logic := ('0');
 
     -- registers for output
     signal mv_up_r     : std_logic := ('0');
@@ -48,10 +47,9 @@ architecture rtl of elevator_ctrl is
             clk_freq : integer
         );
         port(
-            fast_Clk     : in  std_logic;
-            reset        : in  std_logic;
-            roll_out     : out std_logic;
-            slow_counter : out unsigned(3 downto 0)
+            fast_Clk : in  std_logic;
+            reset    : in  std_logic;
+            roll_out : out std_logic
         );
     end component;
     component floor_counter
@@ -75,11 +73,13 @@ begin
         if (rising_edge(clk)) then
             if (reset_n = '0') then
                 --  i should put all the values in the state itself to avoid any multiple drivers
-                if (mv_up_s = '1' or mv_down_s = '1') then
+                if (mv_up_s = '1' or mv_down_s = '1' or door_open_s = '1') then
                     current_state <= preparing_state; -- it goes to the ground floor
                 else
                     current_state <= not_working_state; -- it goes to the ground floor
-
+                    mv_up_r       <= '0';
+                    mv_down_r     <= '0';
+                    door_open_r   <= '0';
                 end if;
             else
                 current_state <= next_state;
@@ -123,6 +123,9 @@ begin
                         floor_counter_enable <= '1';
                         add_or_sub_s         <= '0';
                         mv_down_s            <= '0';
+                    elsif door_open_r = '1' then
+                        -- close the door
+                        door_open_s <= '0';
                     end if;
                 end if;
 
@@ -176,8 +179,7 @@ begin
                     add_or_sub_s         <= '0';
 
                     if (unsigned(req_i) > (('0' & floor_s))) then
-                        -- mv_up_s    <= '1';
-                        -- mv_down_s  <= '0';
+
                         next_state <= go_up_state;
 
                     end if;
@@ -205,10 +207,9 @@ begin
             clk_freq => clk_freq
         )
         port map(
-            fast_Clk     => clk,
-            reset        => timer_reset,
-            roll_out     => roll_s,
-            slow_counter => counter
+            fast_Clk => clk,
+            reset    => timer_reset,
+            roll_out => roll_s
         );
 
     floor_counter_inst : component floor_counter

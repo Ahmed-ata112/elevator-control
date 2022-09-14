@@ -7,10 +7,9 @@ entity one_sec_timer is
         clk_freq : integer := 50_000_000
     );
     port(
-        fast_Clk     : in  std_logic;
-        reset        : in  std_logic;
-        roll_out     : out std_logic;
-        slow_counter : out unsigned(3 downto 0)
+        fast_Clk : in  std_logic;
+        reset    : in  std_logic;
+        roll_out : out std_logic
     );
 end entity;
 architecture rtl of one_sec_timer is
@@ -42,5 +41,4 @@ begin
         end if;
     end process;
 
-    slow_counter <= slow_count_signal;
 end architecture;

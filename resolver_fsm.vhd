@@ -67,7 +67,10 @@ begin
         if (rising_edge(clk)) then
             if (reset_n = '0') then
                 current_state <= none_state; -- it goes to the ground floor
-
+                ups_r         <= (others => '1');
+                downs_r       <= (others => '1');
+                buttons_r     <= (others => '1');
+                req_r         <= NONE_REQ;
             else
                 current_state <= next_state;
                 came_from_r   <= came_from_s;

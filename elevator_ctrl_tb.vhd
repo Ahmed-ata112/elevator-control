@@ -49,8 +49,8 @@ architecture bench of resolver_fsm_tb is
 
     -- Clock period
     -- 10 ns => 1 sec in real time
-    constant clk_period : time    := 10 ns;
-    constant clk_freq   : integer := 100;
+    constant clk_period : time    := 8 ns;
+    constant clk_freq   : integer := 1000;
     -- constant clk_period : time    := 20 ns;
     -- constant clk_freq   : integer := 50_000_000;
 
@@ -127,6 +127,7 @@ begin
         reset_n <= '1';
         wait for clk_period * clk_freq * 3; --simulates a 3 sec
         ups     <= (2 => '0', others => '1'); -- request floor 2
+
         --run for 4.5 Seconds
         wait for clk_period * clk_freq * 4.5;
         report "BLOCK 1, CHECK time is " & time'image(now);
@@ -137,6 +138,7 @@ begin
         report "BLOCK 2, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"2", '1');
         ups <= (others => '1');         -- clear the buttons
+
         wait for clk_period * clk_freq * 4;
         report "BLOCK 3, CHECK time is " & time'image(now);
         assert_floor_and_door(floor_s, door_open, x"2", '0');
@@ -205,13 +207,20 @@ begin
 
         wait for clk_period * clk_freq * 10.5;
         report "BLOCK 14, CHECK time is " & time'image(now);
-        assert_floor_and_door(floor_s, door_open, x"7", '1');
-
+        assert_floor_and_door(floor_s, door_open, x"2", '0');
+        downs <= (7 => '0', others => '1');
         wait for clk_period * clk_freq * 2; -- so the door closes
-        report "BLOCK 15, CHECK time is " & time'image(now);
-        assert_floor_and_door(floor_s, door_open, x"7", '0');
+        downs <= (others => '1');
 
-        wait for clk_period * clk_freq * 6;
+        wait for clk_period * clk_freq * 8.5; -- so the door closes
+        report "BLOCK 15, CHECK time is " & time'image(now);
+        assert_floor_and_door(floor_s, door_open, x"7", '1');
+        reset_n <= '0';
+
+        wait for clk_period * clk_freq * 0.5;
+        reset_n <= '1';
+        wait for clk_period * clk_freq * 3;
+
         stop;
     end process;                        -- p1
 
