@@ -77,9 +77,10 @@ begin
                     current_state <= going_to_valid_place_state; -- it goes to the ground floor
                 else
                     current_state <= not_working_state; -- it goes to the ground floor
-                    mv_up_r       <= '0';
-                    mv_down_r     <= '0';
-                    door_open_r   <= '0';
+                    -- register Output
+                    mv_up_r     <= '0';
+                    mv_down_r   <= '0';
+                    door_open_r <= '0';
                 end if;
             else
                 current_state <= next_state;

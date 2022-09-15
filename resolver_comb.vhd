@@ -32,6 +32,7 @@ begin
             if (reset_n = '0') then
                 none_is_pressed <= '1';
                 highest_dest    <= (others => '0');
+                lowest_dest     <= (others => '0');
             else
                 if (buttons and downs and ups) = ALL_ONES then
                     none_is_pressed <= '1';
