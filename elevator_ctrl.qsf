@@ -41,7 +41,7 @@ set_global_assignment -name NUM_PARALLEL_PROCESSORS 8
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CEBA4F23C7
-set_global_assignment -name TOP_LEVEL_ENTITY top_module
+set_global_assignment -name TOP_LEVEL_ENTITY unit_control
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:04:13  SEPTEMBER 07, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.1 Lite Edition"
@@ -84,8 +84,8 @@ set_location_assignment PIN_AA22 -to HEX0[6]
 set_location_assignment PIN_M9 -to clk
 
 
+set_global_assignment -name VHDL_FILE unit_control.vhd
 set_global_assignment -name VHDL_FILE ssd.vhd
-set_global_assignment -name VHDL_FILE top_module.vhd
 set_global_assignment -name VHDL_FILE resolver_fsm.vhd
 set_global_assignment -name SDC_FILE elevator_ctrl.sdc
 set_global_assignment -name VHDL_FILE resolver_comb.vhd
