@@ -75,7 +75,7 @@ begin
                 if (mv_up_s = '1' or mv_down_s = '1' or door_open_s = '1') then
                     current_state <= going_to_valid_place_state; -- it goes to the ground floor
                 else
-                    current_state <= not_working_state; -- it goes to the ground floor
+                    current_state <= not_working_state; 
                     -- register Output
                     mv_up_r       <= '0';
                     mv_down_r     <= '0';
