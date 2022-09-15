@@ -102,6 +102,7 @@ begin
         next_state           <= current_state;
         floor_counter_enable <= '0';
         add_or_sub_s         <= '0';
+
         case current_state is
 
             when going_to_valid_place_state =>
@@ -193,7 +194,6 @@ begin
                 -- we should stay here as long as the door is open then move to the not working
                 if roll_s = '1' then
                     next_state <= not_working_state;
-
                 end if;
         end case;
 
