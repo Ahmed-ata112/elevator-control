@@ -177,18 +177,21 @@ begin
         wait for clk_period * clk_freq; -- after 1 seconds
         ups <= (others => '1');         -- release all ups
 
-        wait for clk_period * clk_freq * 3.5; -- after 4.5 seconds , it should have reached the 4th floor and opend the door
+        -- after 4.5 seconds , it should have reached the 4th floor and opend the door
+        wait for clk_period * clk_freq * 3.5;
         report "BLOCK 5, CHECK time is " & to_string(now, ns);
         assert_floor_and_door(floor_s, door_open, x"4", '1');
         buttons <= (9 => '0', 0 => '0', others => '1'); -- pressed the buttons and request floor 9 and 0 
 
         -- NOTE: IT WONT change its direction until it reaches the 9th floor
-        wait for clk_period * clk_freq * 10; -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
+        -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
+        wait for clk_period * clk_freq * 10;
         buttons <= (others => '1');
         report "BLOCK 6, CHECK time is " & to_string(now, ns);
         assert_floor_and_door(floor_s, door_open, x"8", '1');
 
-        wait for clk_period * clk_freq * 4; -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
+        -- within 6 seconds , DOOR closed and then it should have reached the 8th floor and opend the door
+        wait for clk_period * clk_freq * 4;
         report "BLOCK 7, CHECK time is " & to_string(now, ns);
         assert_floor_and_door(floor_s, door_open, x"9", '1');
         -- TEST: gowing down with buttons pressed 
@@ -236,7 +239,6 @@ begin
         report "BLOCK 15, CHECK time is " & to_string(now, ns);
         assert_floor_and_door(floor_s, door_open, x"7", '1');
         reset_n <= '0';
-
         wait for clk_period * clk_freq * 0.5;
         reset_n <= '1';
         wait for clk_period * clk_freq * 3;

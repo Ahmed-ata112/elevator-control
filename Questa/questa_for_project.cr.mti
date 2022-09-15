@@ -133,16 +133,6 @@ Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 -- Compiling package body testbench_pack
 -- Loading package testbench_pack
 
-} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd} {1 {vcom -work work -2008 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
-Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Loading package MATH_REAL
--- Compiling entity elevator_ctrl
--- Compiling architecture bench of elevator_ctrl
-
 } {} {}} {{D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}} {1 {vcom -work work -2002 -explicit -vopt {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
 Start time: 15:21:13 on Sep 13,2022
@@ -155,6 +145,16 @@ vcom -reportprogress 300 -work work -2002 -explicit -vopt D:/Academic edu/Misc/P
 -- Compiling entity elevator_ctrl
 -- Compiling architecture rtl of elevator_ctrl
 End time: 15:21:13 on Sep 13,2022, Elapsed time: 0:00:00
+
+} {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd} {1 {vcom -work work -2008 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd}
+Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package MATH_REAL
+-- Compiling entity elevator_ctrl
+-- Compiling architecture bench of elevator_ctrl
 
 } {} {}} {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd} {1 {vcom -work work -2002 -explicit -vopt -stats=none {D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd}
 Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021

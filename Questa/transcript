@@ -1,65 +1,5 @@
-# Compile of testbench_pack.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# 7 compiles, 1 failed with 1 error.
-# Compile of testbench_pack.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# 7 compiles, 1 failed with 1 error.
-# Compile of control_unit_tb.vhd failed with 1 errors.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of elevator_ctrl_tb.vhd failed with 85 errors.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd failed with 7 errors.
-# Compile of unit_control.vhd was successful.
-# 10 compiles, 4 failed with 94 errors.
-# Compile of control_unit_tb.vhd failed with 1 errors.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd failed with 7 errors.
-# Compile of unit_control.vhd was successful.
-# 10 compiles, 3 failed with 9 errors.
-# Compile of control_unit_tb.vhd failed with 1 errors.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd was successful.
-# Compile of unit_control.vhd was successful.
-# 10 compiles, 2 failed with 2 errors.
-# Compile of control_unit_tb.vhd failed with 1 errors.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd was successful.
-# Compile of unit_control.vhd was successful.
-# 10 compiles, 2 failed with 2 errors.
-# Compile of elevator_ctrl.vhd failed with 1 errors.
-# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd failed with 1 errors.
 # Compile of floor_counter.vhd was successful.
 # Compile of one_sec_timer.vhd was successful.
 # Compile of resolver_comb.vhd was successful.
@@ -68,6 +8,7 @@
 # Compile of testbench_pack.vhd was successful.
 # Compile of unit_control.vhd was successful.
 # 9 compiles, 1 failed with 1 error.
+# Compile of testbench_pack.vhd was successful.
 # Compile of elevator_ctrl.vhd was successful.
 # Compile of elevator_ctrl_tb.vhd was successful.
 # Compile of floor_counter.vhd was successful.
@@ -75,83 +16,25 @@
 # Compile of resolver_comb.vhd was successful.
 # Compile of resolver_fsm.vhd was successful.
 # Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd was successful.
 # Compile of unit_control.vhd was successful.
 # 9 compiles, 0 failed with no errors.
-vsim work.elevator_ctrl_tb
-# vsim work.elevator_ctrl_tb 
-# Start time: 13:38:17 on Sep 15,2022
+vsim work.resolver_fsm_tb
+# vsim work.resolver_fsm_tb 
+# Start time: 15:14:00 on Sep 15,2022
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(71): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.elevator_ctrl_inst.current_state'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(117): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.ups_r'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(118): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.downs_r'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(119): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.buttons_r'.
-#         Region: /elevator_ctrl_tb
+# ** Warning: (vopt-13) Recompile work.resolver_fsm_tb because work.testbench_pack has changed.
+# ** Warning: (vopt-12) Recompile work.resolver_fsm_tb(bench) after work.resolver_fsm_tb is recompiled.
+# ** Warning: (vopt-13) Recompile work.resolver_fsm_tb(bench) because work.testbench_pack has changed.
+# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(94): (vopt-1271) Bad default binding for component instance "elevator_ctrl_inst: elevator_ctrl".
+#  (Component generic "clk_freq" is not on the entity.)
 # Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=4, Warnings=0.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=1, Warnings=3.
 # Error loading design
-# End time: 13:38:18 on Sep 15,2022, Elapsed time: 0:00:01
-# Errors: 4, Warnings: 20
+# End time: 15:14:01 on Sep 15,2022, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 7
 vsim work.elevator_ctrl_tb
 # vsim work.elevator_ctrl_tb 
-# Start time: 13:38:43 on Sep 15,2022
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(71): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.elevator_ctrl_inst.current_state'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(117): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.ups_r'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(118): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.downs_r'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(119): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.buttons_r'.
-#         Region: /elevator_ctrl_tb
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=4, Warnings=0.
-# Error loading design
-# End time: 13:38:44 on Sep 15,2022, Elapsed time: 0:00:01
-# Errors: 4, Warnings: 1
-# Compile of elevator_ctrl.vhd was successful.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd was successful.
-# Compile of unit_control.vhd was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.elevator_ctrl_tb
-# vsim work.elevator_ctrl_tb 
-# Start time: 13:40:06 on Sep 15,2022
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(71): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.control_unit_inst.current_state'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(117): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.ups_r'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(118): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.downs_r'.
-#         Region: /elevator_ctrl_tb
-# ** Error (suppressible): D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd(119): (vopt-1565) Failed to find 'resolver_fsm_tb' in hierarchical name '.resolver_fsm_tb.resolver_fsm_inst.buttons_r'.
-#         Region: /elevator_ctrl_tb
-# Optimization failed
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=4, Warnings=0.
-# Error loading design
-# End time: 13:40:06 on Sep 15,2022, Elapsed time: 0:00:00
-# Errors: 4, Warnings: 2
-# Compile of elevator_ctrl.vhd was successful.
-# Compile of elevator_ctrl_tb.vhd was successful.
-# Compile of floor_counter.vhd was successful.
-# Compile of one_sec_timer.vhd was successful.
-# Compile of resolver_comb.vhd was successful.
-# Compile of resolver_fsm.vhd was successful.
-# Compile of ssd.vhd was successful.
-# Compile of testbench_pack.vhd was successful.
-# Compile of unit_control.vhd was successful.
-# 9 compiles, 0 failed with no errors.
-vsim work.elevator_ctrl_tb
-# vsim work.elevator_ctrl_tb 
-# Start time: 13:40:54 on Sep 15,2022
+# Start time: 15:14:06 on Sep 15,2022
 # ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
@@ -172,6 +55,7 @@ sim:/elevator_ctrl_tb/clk \
 sim:/elevator_ctrl_tb/clk_period \
 sim:/elevator_ctrl_tb/door_open \
 sim:/elevator_ctrl_tb/downs \
+sim:/elevator_ctrl_tb/end_sim_event \
 sim:/elevator_ctrl_tb/floor_s \
 sim:/elevator_ctrl_tb/mv_down \
 sim:/elevator_ctrl_tb/mv_up \
@@ -180,9 +64,9 @@ sim:/elevator_ctrl_tb/reset_n \
 sim:/elevator_ctrl_tb/ups
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: aatta  Hostname: MYLOLY  ProcessID: 34004
-#           Attempting to use alternate WLF file "./wlftgy4x5d".
+#           Attempting to use alternate WLF file "./wlftnd62dc".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgy4x5d
+#           Using alternate file: ./wlftnd62dc
 run -all
 # ** Note: 1000
 #    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb
@@ -216,4 +100,239 @@ run -all
 #    Time: 732008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
 # ** Note: BLOCK 15, CHECK time is 816008 ns
 #    Time: 816008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
-# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 246
+# Break key hit
+# Break in Process clk_process at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 117
+run
+# Break key hit
+# Break in Process clk_process at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 117
+# Causality operation skipped due to absence of debug database file
+quit -sim
+# End time: 15:16:58 on Sep 15,2022, Elapsed time: 0:02:52
+# Errors: 0, Warnings: 4
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 15:17:00 on Sep 15,2022
+# ** Note: (vsim-8009) Loading existing optimized design _opt3
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.unit_control(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/control_unit_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+add wave -position insertpoint  \
+sim:/elevator_ctrl_tb/buttons \
+sim:/elevator_ctrl_tb/clk \
+sim:/elevator_ctrl_tb/clk_period \
+sim:/elevator_ctrl_tb/door_open \
+sim:/elevator_ctrl_tb/downs \
+sim:/elevator_ctrl_tb/end_sim_event \
+sim:/elevator_ctrl_tb/floor_s \
+sim:/elevator_ctrl_tb/mv_down \
+sim:/elevator_ctrl_tb/mv_up \
+sim:/elevator_ctrl_tb/req_s \
+sim:/elevator_ctrl_tb/reset_n \
+sim:/elevator_ctrl_tb/ups
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 34004
+#           Attempting to use alternate WLF file "./wlftqf6cz0".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftqf6cz0
+run
+# ** Note: 1000
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# ** Note: BLOCK 1, CHECK time is 60008 ns
+#    Time: 60008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+# ** Note: BLOCK 2, CHECK time is 80008 ns
+#    Time: 80008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+# ** Note: BLOCK 3, CHECK time is 112008 ns
+#    Time: 112008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+run
+# ** Note: BLOCK 4, CHECK time is 144008 ns
+#    Time: 144008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+run
+# ** Note: BLOCK 5, CHECK time is 188008 ns
+#    Time: 188008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+run
+run
+# ** Note: BLOCK 6, CHECK time is 268008 ns
+#    Time: 268008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 7, CHECK time is 300008 ns
+#    Time: 300008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+# ** Note: BLOCK 8, CHECK time is 348008 ns
+#    Time: 348008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+# ** Note: BLOCK 9, CHECK time is 476008 ns
+#    Time: 476008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 10, CHECK time is 508008 ns
+#    Time: 508008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+# ** Note: BLOCK 11, CHECK time is 588008 ns
+#    Time: 588008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 12, CHECK time is 600008 ns
+#    Time: 600008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+# ** Note: BLOCK 13, CHECK time is 648008 ns
+#    Time: 648008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+# ** Note: BLOCK 14, CHECK time is 732008 ns
+#    Time: 732008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+run
+# ** Note: BLOCK 15, CHECK time is 816008 ns
+#    Time: 816008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# Break key hit
+# Break in Process clk_process at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 117
+quit -sim
+# End time: 15:19:59 on Sep 15,2022, Elapsed time: 0:02:59
+# Errors: 0, Warnings: 4
+# Compile of testbench_pack.vhd was successful.
+# Compile of elevator_ctrl.vhd was successful.
+# Compile of elevator_ctrl_tb.vhd was successful.
+# Compile of floor_counter.vhd was successful.
+# Compile of one_sec_timer.vhd was successful.
+# Compile of resolver_comb.vhd was successful.
+# Compile of resolver_fsm.vhd was successful.
+# Compile of ssd.vhd was successful.
+# Compile of unit_control.vhd was successful.
+# 9 compiles, 0 failed with no errors.
+vsim work.elevator_ctrl_tb
+# vsim work.elevator_ctrl_tb 
+# Start time: 15:21:35 on Sep 15,2022
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.math_real(body)
+# Loading work.testbench_pack(body)
+# Loading ieee.std_logic_textio(body)
+# Loading std.env(body)
+# Loading work.elevator_ctrl_tb(bench)#1
+# Loading work.resolver_fsm(rtl)#1
+# Loading work.unit_control(rtl)#1
+# ** Warning: (vsim-8523) Cannot reference the signal "/elevator_ctrl_tb/control_unit_inst/current_state" before it has been elaborated.
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb File: D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+add wave -position insertpoint  \
+sim:/elevator_ctrl_tb/buttons \
+sim:/elevator_ctrl_tb/clk \
+sim:/elevator_ctrl_tb/clk_period \
+sim:/elevator_ctrl_tb/door_open \
+sim:/elevator_ctrl_tb/downs \
+sim:/elevator_ctrl_tb/floor_s \
+sim:/elevator_ctrl_tb/mv_down \
+sim:/elevator_ctrl_tb/mv_up \
+sim:/elevator_ctrl_tb/req_s \
+sim:/elevator_ctrl_tb/reset_n \
+sim:/elevator_ctrl_tb/ups
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: aatta  Hostname: MYLOLY  ProcessID: 34004
+#           Attempting to use alternate WLF file "./wlftvychk6".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftvychk6
+run -all
+# ** Note: 1000
+#    Time: 0 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 1, CHECK time is 60008 ns
+#    Time: 60008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 2, CHECK time is 80008 ns
+#    Time: 80008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 3, CHECK time is 112008 ns
+#    Time: 112008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 4, CHECK time is 144008 ns
+#    Time: 144008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 5, CHECK time is 188008 ns
+#    Time: 188008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 6, CHECK time is 268008 ns
+#    Time: 268008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 7, CHECK time is 300008 ns
+#    Time: 300008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 8, CHECK time is 348008 ns
+#    Time: 348008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 9, CHECK time is 476008 ns
+#    Time: 476008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 10, CHECK time is 508008 ns
+#    Time: 508008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 11, CHECK time is 588008 ns
+#    Time: 588008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 12, CHECK time is 600008 ns
+#    Time: 600008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 13, CHECK time is 648008 ns
+#    Time: 648008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 14, CHECK time is 732008 ns
+#    Time: 732008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# ** Note: BLOCK 15, CHECK time is 816008 ns
+#    Time: 816008 ns  Iteration: 0  Instance: /elevator_ctrl_tb
+# Break in Process p1 at D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd line 247

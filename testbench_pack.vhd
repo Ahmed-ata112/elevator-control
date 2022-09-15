@@ -8,6 +8,7 @@ package testbench_pack is
                                     door_s      : std_logic;
                                     floor_value : std_logic_vector;
                                     door_value  : std_logic);
+
 end package;
 
 package body testbench_pack is
@@ -20,4 +21,5 @@ package body testbench_pack is
         assert floor_s = floor_value report "At Time: " & time'image(now) & " ,floor should be " & to_hstring(floor_value) & " but was found " & to_hstring(floor_s) severity error;
 
     end assert_floor_and_door;
+
 end package body;
