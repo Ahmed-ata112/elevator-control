@@ -47,8 +47,8 @@ architecture bench of elevator_ctrl_tb is
 
     -- Clock period
     -- 10 ns => 1 sec in real time
-    constant clk_period : time    := 8 ns;
-    constant clk_freq   : integer := 1000;
+    constant clk_period : time    := 10 ns;
+    constant clk_freq   : integer := 100;
 
     -- Generics
     constant N : integer := 10;
