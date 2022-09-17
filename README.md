@@ -14,7 +14,7 @@ It contains 2 main parts the Control Unit and the Resolver.
 
 ## Diagram
 
-![Diagram](unit_control.svg "Diagram")
+![Diagram](assets/unit_control.svg "Diagram")
 
 ## Generics
 
@@ -42,7 +42,7 @@ It contains 2 main parts the Control Unit and the Resolver.
 
 ## State machine
 
-## ![Diagram_state_machine_0](stm_unit_control_00.svg "Diagram")
+## ![Diagram_state_machine_0](assets/stm_unit_control_00.svg "Diagram")
 
 <br/>
 <br/>
@@ -51,7 +51,7 @@ It contains 2 main parts the Control Unit and the Resolver.
 
 it takes all the buttons and outputs only one single request to the control unit
 
-![Diagram](resolver_fsm.svg "Diagram")
+![Diagram](assets/resolver_fsm.svg "Diagram")
 
 ## Generics
 
@@ -78,6 +78,6 @@ it takes all the buttons and outputs only one single request to the control unit
 
 - U1: resolver_comb
 
-## State machines
+## State machine
 
-![Diagram_state_machine_0](stm_resolver_fsm_00.svg "Diagram")
+![Diagram_state_machine_0](assets/stm_resolver_fsm_00.svg "Diagram")
