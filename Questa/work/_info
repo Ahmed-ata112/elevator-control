@@ -1,0 +1,676 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Academic edu/Misc/PT intern/FBGA ACADEMY/lab9/DE0-CV/part1.VHDL/ModelSim
+T_opt
+!s110 1663012601
+V77o]g>j6_Gj<e1IQH1D2X2
+Z2 04 15 5 work resolver_fsm_tb bench 1
+=6-020cf0a1cd70-631f8ef9-93-3f34
+Z3 !s124 OEM10U6 
+Z4 o-quiet -auto_acc_if_foreign -work work
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1662850712
+V=CzDgdLJ_K5c4C9R[Ci4c2
+R2
+=2-020cf0a1cd70-631d1698-63-84d4
+R3
+R4
+R5
+n@_opt1
+R6
+R1
+T_opt2
+!s110 1663093399
+VHHDoF41WV5M4zc<[CU?EB3
+R2
+=34-020cf0a1cd70-6320ca97-2e5-7afc
+R3
+R4
+R5
+n@_opt2
+R6
+R1
+T_opt3
+!s110 1663273009
+VmM>o<Ch<48E6z_VdFUO7F1
+04 16 5 work elevator_ctrl_tb bench 1
+=1-020cf0a1cd70-63238830-359-1914
+R3
+R4
+R5
+n@_opt3
+R6
+Eb_reg_test
+Z7 w1662901174
+Z8 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z9 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 77
+Z11 dD:/Academic edu/Misc/PT intern/repos/pti-final-project/Questa
+Z12 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/b_reg_test.vhd
+Z13 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/b_reg_test.vhd
+l0
+L5 1
+VDAU>G[_kjL_>5j11lI[@_0
+!s100 7?1dhAW4SNTY0Q@_^Behe1
+Z14 OL;C;2021.2;73
+32
+Z15 !s110 1662904273
+!i10b 1
+Z16 !s108 1662904273.000000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/b_reg_test.vhd|
+Z18 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/b_reg_test.vhd|
+!i113 0
+Z19 o-work work -2002 -explicit
+Z20 tExplicit 1 CvgOpt 0
+Artl
+R8
+R9
+R10
+DEx4 work 10 b_reg_test 0 22 DAU>G[_kjL_>5j11lI[@_0
+!i122 77
+l20
+L16 40
+V3]_?aZU[AR88YX>1fB2zP3
+!s100 nf2R6c^nRHjB>HCJiZ6J63
+R14
+32
+R15
+!i10b 1
+R16
+R17
+R18
+!i113 0
+R19
+R20
+Eelevator_ctrl
+Z21 w1663239393
+Z22 DPx4 ieee 9 math_real 0 22 gNk<PdFJ<XNPcfef`f?Z81
+R8
+R9
+R10
+!i122 1041
+R11
+Z23 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd
+Z24 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd
+l0
+L8 1
+Vf231IFb@cP:^Q:V`PoQa?1
+!s100 3fJlNcMQiXB69=UCJ7fDW3
+R14
+33
+Z25 !s110 1663272994
+!i10b 1
+Z26 !s108 1663272994.000000
+Z27 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd|
+Z28 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd|
+!i113 0
+Z29 o-work work -2008 -explicit
+R20
+Abench
+R22
+R8
+R9
+R10
+DEx4 work 13 elevator_ctrl 0 22 f231IFb@cP:^Q:V`PoQa?1
+!i122 1041
+l72
+L24 92
+VADj8X<V6USLLZ7IHn[Ahc2
+!s100 mS2R^aYMc_jk72Z5[[6Tb1
+R14
+33
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 0
+R29
+R20
+Artl
+R22
+R8
+R9
+R10
+DEx4 work 13 elevator_ctrl 0 22 DB>MZJhcONndW`:alQ72f1
+!i122 923
+l69
+L22 211
+VA5hTSQcIPc<Q_FDl`D=lR3
+!s100 nZAlHiNlc8H?VMZm9E2bR3
+R14
+32
+!s110 1663165681
+!i10b 1
+Z30 !s108 1663165681.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl.vhd|
+R28
+!i113 0
+R19
+R20
+w1663163740
+Eelevator_ctrl_tb
+Z31 w1663272990
+Z32 DPx3 std 3 env 0 22 d?`1ck@NdeD@H3RZG7FgZ2
+Z33 DPx4 ieee 16 std_logic_textio 0 22 8]8<fKiYoHe;_IDO3kmNH2
+Z34 DPx4 work 14 testbench_pack 0 22 1CR8LAPP>@c3VZ_DG^`n10
+R22
+R8
+R9
+R10
+!i122 1042
+R11
+Z35 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+Z36 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd
+l0
+L9 1
+V<0o7gz`DgUXggVz=ZN<eT2
+!s100 OjPOOAZ4:AmAQLQ7N]UBj3
+R14
+33
+R25
+!i10b 1
+R26
+Z37 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd|
+Z38 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/elevator_ctrl_tb.vhd|
+!i113 0
+R29
+R20
+Abench
+R32
+R33
+R34
+R22
+R8
+R9
+R10
+DEx4 work 16 elevator_ctrl_tb 0 22 <0o7gz`DgUXggVz=ZN<eT2
+!i122 1042
+l71
+L12 238
+V1<e=j:11_3n:EFlLd48Ai2
+!s100 ooS_;0PDg^aTNXRZhhze<2
+R14
+33
+R25
+!i10b 1
+R26
+R37
+R38
+!i113 0
+R29
+R20
+Efloor_counter
+Z39 w1663012382
+R8
+R9
+R10
+!i122 1043
+R11
+Z40 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd
+Z41 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd
+l0
+L5 1
+VPA4HTjK5T0D2hZLPEQYkZ3
+!s100 282@ATeLVRW46FbaV1RjO0
+R14
+32
+R25
+!i10b 1
+R26
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd|
+Z43 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/floor_counter.vhd|
+!i113 0
+R19
+R20
+Abehavior
+R8
+R9
+R10
+DEx4 work 13 floor_counter 0 22 PA4HTjK5T0D2hZLPEQYkZ3
+!i122 1043
+l21
+L19 33
+Vf@4DjEBYPVGBFBJogjF293
+!s100 7DBYPaOQJZEHRdN@IolY`1
+R14
+32
+R25
+!i10b 1
+R26
+R42
+R43
+!i113 0
+R19
+R20
+Eone_sec_timer
+Z44 w1663151450
+R8
+R9
+R10
+!i122 1044
+R11
+Z45 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd
+Z46 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd
+l0
+L5 1
+VH0mn99^EX8XS@5ljkIi4J2
+!s100 :Dnb6Aio>_OekQiYKSfLi3
+R14
+32
+R25
+!i10b 1
+R26
+Z47 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd|
+Z48 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/one_sec_timer.vhd|
+!i113 0
+R19
+R20
+Artl
+R8
+R9
+R10
+DEx4 work 13 one_sec_timer 0 22 H0mn99^EX8XS@5ljkIi4J2
+!i122 1044
+l19
+L15 30
+V4ZhGb@<86;^4j`A13?9hA3
+!s100 XhNB;4;CcO:B@zmRFLJ3;2
+R14
+32
+R25
+!i10b 1
+R26
+R47
+R48
+!i113 0
+R19
+R20
+Eresolver_comb
+Z49 w1663238302
+R22
+R8
+R9
+R10
+!i122 1045
+R11
+Z50 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd
+Z51 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd
+l0
+L8 1
+V=:XP3<HSKZ3>GJAWFLHA50
+!s100 G]O6g;2PNTV<k;B7bceZb0
+R14
+32
+Z52 !s110 1663272995
+!i10b 1
+R26
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd|
+Z54 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_comb.vhd|
+!i113 0
+R19
+R20
+Aarch
+R22
+R8
+R9
+R10
+DEx4 work 13 resolver_comb 0 22 =:XP3<HSKZ3>GJAWFLHA50
+!i122 1045
+l27
+L24 37
+VZa5nQLYhO@RDQRQ<UenLk2
+!s100 LWgaChnooO]d4eKEzP;ec3
+R14
+32
+R52
+!i10b 1
+R26
+R53
+R54
+!i113 0
+R19
+R20
+Eresolver_fsm
+Z55 w1663151219
+R22
+R8
+R9
+R10
+!i122 1046
+R11
+Z56 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd
+Z57 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd
+l0
+L6 1
+Vg2b6XQKJnQ]lQYRQVzA1P2
+!s100 FL^Fg1N[aKG6WfA8c8GK73
+R14
+32
+R52
+!i10b 1
+Z58 !s108 1663272995.000000
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd|
+Z60 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/resolver_fsm.vhd|
+!i113 0
+R19
+R20
+Artl
+R22
+R8
+R9
+R10
+DEx4 work 12 resolver_fsm 0 22 g2b6XQKJnQ]lQYRQVzA1P2
+!i122 1046
+l62
+L24 150
+V[h5DzV;z_lO@`MJ8Nnfzh0
+!s100 KGW0Ji1iEo64dGbEdRFUd3
+R14
+32
+R52
+!i10b 1
+R58
+R59
+R60
+!i113 0
+R19
+R20
+Eresolver_fsm_tb
+Z61 w1663163835
+R32
+R33
+Z62 DPx4 work 14 testbench_pack 0 22 b@J5R3Qm2^e@R8Ab93b6=0
+R22
+R8
+R9
+R10
+!i122 926
+R11
+R35
+R36
+l0
+L11 1
+V`T8cJ9W6abW@LDnkC2BG=1
+!s100 B=AkU;0K1BLdh[o^WQ>1b1
+R14
+33
+Z63 !s110 1663165682
+!i10b 1
+R30
+R37
+R38
+!i113 0
+R29
+R20
+Abench
+R32
+R33
+R62
+R22
+R8
+R9
+R10
+DEx4 work 15 resolver_fsm_tb 0 22 `T8cJ9W6abW@LDnkC2BG=1
+!i122 926
+l75
+L14 237
+V7jd0F^6J0]HH3<z8SQ1l^1
+!s100 n<dG6PKE66KQ5HNbiWTGC0
+R14
+33
+R63
+!i10b 1
+R30
+R37
+R38
+!i113 0
+R29
+R20
+Essd
+Z64 w1662924642
+R9
+R10
+!i122 1047
+R11
+Z65 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/ssd.vhd
+Z66 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/ssd.vhd
+l0
+L4 1
+Vcge@YQzT]a]]C:YbPROS:1
+!s100 SL<BUzAl<MOBDGiCmZ`MS0
+R14
+32
+R52
+!i10b 1
+R58
+Z67 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/ssd.vhd|
+Z68 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/ssd.vhd|
+!i113 0
+R19
+R20
+Abehavior
+R9
+R10
+DEx4 work 3 ssd 0 22 cge@YQzT]a]]C:YbPROS:1
+!i122 1047
+l12
+L10 28
+V0olD9>?HPTh6UNPgJ87;A0
+!s100 k6z8gJ3>iBDBYRbmdV5<G2
+R14
+32
+R52
+!i10b 1
+R58
+R67
+R68
+!i113 0
+R19
+R20
+Ptestbench_pack
+R8
+R9
+R10
+!i122 1040
+Z69 w1663248063
+R11
+Z70 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd
+Z71 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd
+l0
+L5 1
+V1CR8LAPP>@c3VZ_DG^`n10
+!s100 bK[W<GC:cN<91B?43U@f>1
+R14
+33
+b1
+R25
+!i10b 1
+R26
+Z72 !s90 -reportprogress|300|-work|work|-2008|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd|
+Z73 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/testbench_pack.vhd|
+!i113 0
+R29
+R20
+Bbody
+R34
+R8
+R9
+R10
+!i122 1040
+l0
+L14 1
+V80LMi_;M:14h2CfbjcN1[0
+!s100 2^<ViWa:z9`6Wh9]W7zP31
+R14
+33
+R25
+!i10b 1
+R26
+R72
+R73
+!i113 0
+R29
+R20
+Eunit_control
+Z74 w1663240268
+R22
+R8
+R9
+R10
+!i122 1048
+R11
+Z75 8D:/Academic edu/Misc/PT intern/repos/pti-final-project/unit_control.vhd
+Z76 FD:/Academic edu/Misc/PT intern/repos/pti-final-project/unit_control.vhd
+l0
+L5 1
+Vd3K>hLD8I46kSXjzO:9KC1
+!s100 m=>;DVA@QaZo_eZc@DG?o3
+R14
+32
+R52
+!i10b 1
+R58
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-vopt|-stats=none|D:/Academic edu/Misc/PT intern/repos/pti-final-project/unit_control.vhd|
+Z78 !s107 D:/Academic edu/Misc/PT intern/repos/pti-final-project/unit_control.vhd|
+!i113 0
+R19
+R20
+Artl
+R22
+R8
+R9
+R10
+DEx4 work 12 unit_control 0 22 d3K>hLD8I46kSXjzO:9KC1
+!i122 1048
+l68
+L21 209
+V=_`:V`5dKX9c;RPC[TUe_1
+!s100 R]h402m_E97?b>U8>3kg>0
+R14
+32
+R52
+!i10b 1
+R58
+R77
+R78
+!i113 0
+R19
+R20

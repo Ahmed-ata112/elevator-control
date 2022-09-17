@@ -1,11 +1,11 @@
-**/db
-**/incremental_db
+# **/db
+# **/incremental_db
 
-**/output_files/*
-!**/*.sof
+# **/output_files/*
+# !**/*.sof
 
-.vscode/*
-.vscode/
-**/simulation
+# .vscode/*
+# .vscode/
+# **/simulation
 
-**/work
+# **/work
