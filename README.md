@@ -7,7 +7,10 @@ it supports any arbirataty number of floors and can specified with the generic N
 
 It contains 2 main parts the Control Unit and the Resolver.
 
-- Control Unit
+<br/>
+<br/>
+
+# Control Unit
 
 ## Diagram
 
@@ -39,10 +42,14 @@ It contains 2 main parts the Control Unit and the Resolver.
 
 ## State machine
 
-![Diagram_state_machine_0](stm_unit_control_00.svg "Diagram")
+## ![Diagram_state_machine_0](stm_unit_control_00.svg "Diagram")
 
-- the Resolver
-  it takes all the buttons and outputs only one single request to the control unit
+<br/>
+<br/>
+
+# The Resolver
+
+it takes all the buttons and outputs only one single request to the control unit
 
 ![Diagram](resolver_fsm.svg "Diagram")
 
@@ -66,8 +73,6 @@ It contains 2 main parts the Control Unit and the Resolver.
 | door_open | in        | std_logic                                                   |
 | floor     | in        | std_logic_vector(integer(ceil(log2(real(N)))) - 1 downto 0) |
 | req       | out       | std_logic_vector(integer(ceil(log2(real(N)))) downto 0)     |
-
-                                                                  |             |
 
 ## Instantiations
 
